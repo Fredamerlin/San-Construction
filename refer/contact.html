@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | SAN Construction - Turnkey Architectural & Construction Services</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0F1115',
+                            card: '#1A1A1E',
+                            concrete: '#2A2E37',
+                            border: '#38383E',
+                            lightBg: '#F7F5F0',
+                            ivory: '#F0EDE6',
+                            gold: '#C5A059',
+                            goldHover: '#D4AF37',
+                            goldLight: 'rgba(197, 160, 89, 0.12)',
+                            textMuted: '#A0A0A8'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0F1115;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #38383E;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C5A059;
+        }
+        
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF0D0 0%, #C5A059 50%, #E2C481 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .blueprint-grid {
+            background-size: 30px 30px;
+            background-image: 
+                linear-gradient(to right, rgba(197, 160, 89, 0.08) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(197, 160, 89, 0.08) 1px, transparent 1px);
+        }
+
+        .glass-panel {
+            background: rgba(26, 26, 30, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-gray-200 font-sans antialiased selection:bg-brand-gold selection:text-black">
+
+    <!-- Scroll Progress Bar -->
+    <div id="scrollProgress" class="fixed top-0 left-0 h-1 bg-brand-gold z-50 transition-all duration-150 w-0"></div>
+
+    <!-- Header / Navbar -->
+    <header id="mainHeader" class="fixed top-0 left-0 w-full z-40 transition-all duration-300 py-5 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto glass-panel rounded-2xl px-6 py-3 flex items-center justify-between transition-all duration-300">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-lg bg-brand-gold/10 border border-brand-gold/40 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-black transition-all duration-300">
+                    <span class="font-serif text-2xl font-bold">S</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-xl tracking-wider font-bold text-white group-hover:text-brand-gold transition-colors">SAN</span>
+                    <span class="text-[9px] tracking-[0.25em] text-brand-gold uppercase -mt-1 font-semibold">CONSTRUCTION</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="index.html" class="hover:text-brand-gold transition-colors">Home</a>
+                <a href="about.html" class="hover:text-brand-gold transition-colors">About Us</a>
+                <a href="services.html" class="hover:text-brand-gold transition-colors">Services</a>
+                <a href="projects.html" class="hover:text-brand-gold transition-colors">Projects</a>
+                <a href="process.html" class="hover:text-brand-gold transition-colors">Our Process</a>
+                <a href="contact.html" class="text-brand-gold font-semibold">Contact Us</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="tel:+919876543210" class="text-xs font-semibold tracking-wider uppercase text-gray-400 hover:text-white flex items-center gap-2">
+                    <i data-lucide="phone" class="w-3.5 h-3.5 text-brand-gold"></i>
+                    <span>+91 98765 43210</span>
+                </a>
+                <button onclick="scrollToSection('inquiryForm')" class="relative group overflow-hidden rounded-xl px-5 py-2.5 bg-brand-gold text-black font-semibold text-xs tracking-wider uppercase transition-all duration-300 hover:shadow-[0_0_20px_rgba(197,160,89,0.4)]">
+                    <span class="relative z-10 flex items-center gap-2">
+                        <span>Get a Quote</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </span>
+                    <div class="absolute inset-0 bg-white/30 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobileMenuBtn" class="lg:hidden text-white p-2 focus:outline-none" aria-label="Toggle Navigation">
+                <i data-lucide="menu" id="menuIcon" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileDrawer" class="fixed inset-0 bg-brand-dark/95 backdrop-blur-xl z-30 transform translate-x-full transition-transform duration-500 lg:hidden flex flex-col justify-between p-8 pt-28">
+        <div class="flex flex-col gap-6 text-xl font-serif">
+            <a href="index.html" class="mobile-nav-link text-gray-300 hover:text-brand-gold border-b border-white/5 pb-3">Home</a>
+            <a href="about.html" class="mobile-nav-link text-gray-300 hover:text-brand-gold border-b border-white/5 pb-3">About Us</a>
+            <a href="services.html" class="mobile-nav-link text-gray-300 hover:text-brand-gold border-b border-white/5 pb-3">Services</a>
+            <a href="projects.html" class="mobile-nav-link text-gray-300 hover:text-brand-link border-b border-white/5 pb-3">Projects</a>
+            <a href="process.html" class="mobile-nav-link text-gray-300 hover:text-brand-gold border-b border-white/5 pb-3">Our Process</a>
+            <a href="contact.html" class="mobile-nav-link text-brand-gold border-b border-white/5 pb-3">Contact Us</a>
+        </div>
+        <div class="flex flex-col gap-4">
+            <button onclick="scrollToSection('inquiryForm'); toggleMobileDrawer();" class="w-full py-4 rounded-xl bg-brand-gold text-black font-semibold text-center uppercase tracking-wider text-xs">
+                Request Project Consultation
+            </button>
+        </div>
+    </div>
+
+    <!-- SECTION 1: HERO -->
+    <section class="relative min-h-[70vh] flex items-center justify-center pt-28 pb-16 px-4 md:px-8 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000&auto=format&fit=crop" 
+                 alt="Modern South Indian Villa Exterior at Sunset" 
+                 class="w-full h-full object-cover object-center scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-brand-dark/50"></div>
+            <div class="blueprint-grid absolute inset-0 opacity-20"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto w-full pt-12">
+            <!-- Breadcrumbs -->
+            <nav class="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">
+                <a href="index.html" class="hover:text-brand-gold transition-colors">Home</a>
+                <span>/</span>
+                <span class="text-brand-gold">Contact Us</span>
+            </nav>
+
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-gold/15 border border-brand-gold/30 text-brand-gold text-xs font-semibold tracking-wider uppercase mb-6 backdrop-blur-md">
+                    <span class="w-2 h-2 rounded-full bg-brand-gold animate-ping"></span>
+                    DIRECT CONSULTATION & INQUIRIES
+                </div>
+
+                <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl font-semibold text-white leading-[1.1] mb-6">
+                    Let's Build Something <br>
+                    <span class="gold-gradient-text italic font-normal">Great Together.</span>
+                </h1>
+
+                <p class="text-base md:text-xl text-gray-300 font-light leading-relaxed mb-10 max-w-2xl">
+                    Have a project in mind? Tell us what you're planning, and let's explore how we can bring your architectural vision to life with complete structural integrity.
+                </p>
+
+                <div class="flex flex-wrap items-center gap-4">
+                    <button onclick="scrollToSection('inquiryForm')" class="px-8 py-4 rounded-xl bg-brand-gold text-black font-semibold text-xs tracking-widest uppercase hover:bg-brand-goldHover transition-all flex items-center gap-3 shadow-[0_10px_30px_rgba(197,160,89,0.3)]">
+                        <span>Discuss Your Project</span>
+                        <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                    </button>
+                    <a href="projects.html" class="px-8 py-4 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-xs tracking-widest uppercase border border-white/20 backdrop-blur-md transition-all flex items-center gap-3">
+                        <i data-lucide="building" class="w-4 h-4 text-brand-gold"></i>
+                        <span>Explore Our Projects</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: VERIFIED CONTACT INFO CARDS -->
+    <section class="py-16 px-4 md:px-8 bg-brand-dark relative border-t border-brand-border">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Call Us Card -->
+                <div class="p-6 rounded-3xl bg-brand-card border border-brand-border hover:border-brand-gold/50 transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold mb-6 group-hover:bg-brand-gold group-hover:text-black transition-colors">
+                        <i data-lucide="phone-call" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-xs font-mono text-brand-gold uppercase block mb-1">DIRECT PHONE</span>
+                    <h3 class="font-serif text-xl text-white font-semibold mb-2">Call Us</h3>
+                    <a href="tel:+919876543210" class="text-sm text-gray-300 hover:text-brand-gold transition-colors block mb-4 font-mono">+91 98765 43210</a>
+                    <button onclick="copyToClipboard('+919876543210', 'Phone number copied!')" class="text-[11px] text-gray-400 hover:text-white flex items-center gap-1.5 font-semibold uppercase tracking-wider">
+                        <i data-lucide="copy" class="w-3.5 h-3.5 text-brand-gold"></i>
+                        <span>Copy Number</span>
+                    </button>
+                </div>
+
+                <!-- Email Us Card -->
+                <div class="p-6 rounded-3xl bg-brand-card border border-brand-border hover:border-brand-gold/50 transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold mb-6 group-hover:bg-brand-gold group-hover:text-black transition-colors">
+                        <i data-lucide="mail" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-xs font-mono text-brand-gold uppercase block mb-1">EMAIL INQUIRIES</span>
+                    <h3 class="font-serif text-xl text-white font-semibold mb-2">Email Us</h3>
+                    <a href="mailto:contact@sanconstruction.in" class="text-sm text-gray-300 hover:text-brand-gold transition-colors block mb-4 font-mono">contact@sanconstruction.in</a>
+                    <button onclick="copyToClipboard('contact@sanconstruction.in', 'Email address copied!')" class="text-[11px] text-gray-400 hover:text-white flex items-center gap-1.5 font-semibold uppercase tracking-wider">
+                        <i data-lucide="copy" class="w-3.5 h-3.5 text-brand-gold"></i>
+                        <span>Copy Email</span>
+                    </button>
+                </div>
+
+                <!-- Head Office Card -->
+                <div class="p-6 rounded-3xl bg-brand-card border border-brand-border hover:border-brand-gold/50 transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold mb-6 group-hover:bg-brand-gold group-hover:text-black transition-colors">
+                        <i data-lucide="map-pin" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-xs font-mono text-brand-gold uppercase block mb-1">HEADQUARTERS</span>
+                    <h3 class="font-serif text-xl text-white font-semibold mb-2">Visit Us</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed mb-4">SAN Tower, 4th Floor, 100 Feet Road, Indiranagar, Bengaluru, KA 560038</p>
+                    <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="text-[11px] text-brand-gold hover:text-brand-goldHover flex items-center gap-1 font-semibold uppercase tracking-wider">
+                        <span>Get Directions</span>
+                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
+
+                <!-- Working Hours Card -->
+                <div class="p-6 rounded-3xl bg-brand-card border border-brand-border hover:border-brand-gold/50 transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold mb-6 group-hover:bg-brand-gold group-hover:text-black transition-colors">
+                        <i data-lucide="clock" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-xs font-mono text-brand-gold uppercase block mb-1">OFFICE HOURS</span>
+                    <h3 class="font-serif text-xl text-white font-semibold mb-2">Working Hours</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed mb-1"><strong class="text-white">Mon - Sat:</strong> 9:00 AM – 6:30 PM</p>
+                    <p class="text-xs text-gray-400 leading-relaxed"><strong class="text-white">Sunday:</strong> By Prior Appointment</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: MAIN PROJECT INQUIRY FORM -->
+    <section id="inquiryForm" class="py-20 px-4 md:px-8 bg-brand-dark relative border-t border-brand-border">
+        <div class="max-w-4xl mx-auto glass-panel p-8 md:p-12 rounded-3xl border border-brand-border relative overflow-hidden">
+            <div class="blueprint-grid absolute inset-0 opacity-15"></div>
+
+            <div class="relative z-10 max-w-2xl mb-10">
+                <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase mb-2 block">PROJECT BRIEF</span>
+                <h2 class="font-serif text-3xl md:text-5xl text-white font-semibold mb-4">Tell Us About Your Project</h2>
+                <p class="text-gray-400 text-sm font-light">
+                    Share your requirements and plot details. Our senior engineering team will analyze your specifications and respond with a structured initial consultation.
+                </p>
+            </div>
+
+            <form id="projectForm" onsubmit="handleInquirySubmit(event)" class="relative z-10 space-y-6">
+                <!-- Row 1: Name & Phone -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="text-[11px] font-semibold text-gray-300 uppercase tracking-wider block mb-2">
+                            Full Name <span class="text-brand-gold">*</span>
+                        </label>
+                        <input type="text" id="fullName" required placeholder="e.g. Vikramaditya Sharma" 
+                               class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-3 text-sm text-white focus:border-brand-gold focus:outline-none transition-colors">
+                        <span id="nameError" class="text-[10px] text-red-400 hidden mt-1">Please enter your full name.</span>
+                    </div>
+
+                    <div>
+                        <label class="text-[11px] font-semibold text-gray-300 uppercase tracking-wider block mb-2">
+                            Phone Number <span class="text-brand-gold">*</span>
+                        </label>
+                        <div class="flex">
+                            <span class="inline-flex items-center px-3 rounded-l-xl bg-brand-concrete border border-r-0 border-brand-border text-xs text-gray-400 font-mono">+91</span>
+                            <input type="tel" id="phoneNumber" required placeholder="98765 43210" pattern="[0-9]{10}"
+                                   class="w-full bg-brand-dark border border-brand-border rounded-r-xl px-4 py-3 text-sm text-white focus:border-brand-gold focus:outline-none transition-colors font-mono">
+                        </div>
+                        <span id="phoneError" class="text-[10px] text-red-400 hidden mt-1">Please enter a valid 10-digit phone number.</span>
+                    </div>
+                </div>
+
+                <!-- Row 2: Email & Project Type -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="text-[11px] font-semibold text-gray-300 uppercase tracking-wider block mb-2">
+                            Email Address <span class="text-brand-gold">*</span>
+                        </label>
+                        <input type="email" id="emailAddr" required placeholder="name@domain.com" 
+                               class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-3 text-sm text-white focus:border-brand-gold focus:outline-none transition-colors">
+                        <span id="emailError" class="text-[10px] text-red-400 hidden mt-1">Please enter a valid email address.</span>
+                    </div>
+
+                    <div>
+                        <label class="text-[11px] font-semibold text-gray-300 uppercase tracking-wider block mb-2">
+                            Project Type <span class="text-brand-gold">*</span>
+                        </label>
+                        <select id="projectType" required class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-3 text-sm text-white focus:border-brand-gold focus:outline-none transition-colors">
+                            <option value="" disabled selected>Select Project Scope</option>
+                            <option value="Residential Villa">Residential Independent Villa</option>
+                            <option value="Commercial Office">Commercial / Corporate Office</option>
+                            <option value="Design & Build">Turnkey Architecture & Construction</option>
+                            <option value="Renovation">Luxury Structural Renovation</option>
+                            <option value="Other">Other Custom Development</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Row 3: Location & Budget -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="text-[11px] font-semibold text-gray-300 uppercase tracking-wider block mb-2">
+                            Project Location (City / State) <span class="text-brand-gold">*</span>
+                        </label>
+                        <input type="text" id="projectLoc" required placeholder="e.g. Jubilee Hills, Hyderabad" 
+                               class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-3 text-sm text-white focus:border-brand-gold focus:outline-none transition-colors">
+                    </div>
+
+                    <div>
+                        <label class="text-[11px] font-semibold text-gray-300 uppercase tracking-wider block mb-2">
+                            Estimated Budget Range (Optional)
+                        </label>
+                        <select id="budgetRange" class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-3 text-sm text-white focus:border-brand-gold focus:outline-none transition-colors">
+                            <option value="Not Specified">Select Estimated Budget</option>
+                            <option value="₹75 Lakhs - ₹1.5 Cr">₹75 Lakhs – ₹1.5 Crore</option>
+                            <option value="₹1.5 Cr - ₹3 Cr">₹1.5 Crore – ₹3 Crore</option>
+                            <option value="₹3 Cr - ₹5 Cr">₹3 Crore – ₹5 Crore</option>
+                            <option value="₹5 Cr+">₹5 Crore+</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Row 4: Start Date & Requirements -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="text-[11px] font-semibold text-gray-300 uppercase tracking-wider block mb-2">
+                            Expected Start Timeframe (Optional)
+                        </label>
+                        <select id="startDateframe" class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-3 text-sm text-white focus:border-brand-gold focus:outline-none transition-colors">
+                            <option value="Immediately">Immediately</option>
+                            <option value="Within 1-3 Months">Within 1–3 Months</option>
+                            <option value="Within 3-6 Months">Within 3–6 Months</option>
+                            <option value="Planning Phase">Planning / Flexible</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="text-[11px] font-semibold text-gray-300 uppercase tracking-wider block mb-2">
+                            Plot Area (Approx Sq. Ft)
+                        </label>
+                        <input type="number" id="plotSize" placeholder="e.g. 3600" 
+                               class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-3 text-sm text-white focus:border-brand-gold focus:outline-none transition-colors font-mono">
+                    </div>
+                </div>
+
+                <!-- Row 5: Message text area -->
+                <div>
+                    <label class="text-[11px] font-semibold text-gray-300 uppercase tracking-wider block mb-2">
+                        Project Details & Spatial Vision
+                    </label>
+                    <textarea id="projectDetails" rows="4" placeholder="Tell us about your floor preferences, bedroom count, architectural style (Modern, Kerala Heritage, Chettinad, Courtyard), or special requirements..." 
+                              class="w-full bg-brand-dark border border-brand-border rounded-xl p-4 text-sm text-white focus:border-brand-gold focus:outline-none transition-colors"></textarea>
+                </div>
+
+                <!-- Consent Checkbox -->
+                <div class="flex items-start gap-3">
+                    <input type="checkbox" id="consentCheck" required class="mt-1 accent-brand-gold w-4 h-4 rounded border-brand-border">
+                    <label for="consentCheck" class="text-xs text-gray-400 leading-relaxed">
+                        I agree to be contacted by SAN Construction via phone or email regarding this project inquiry. SAN Construction respects your privacy and will never share your details with third parties.
+                    </label>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" id="submitBtn" class="w-full py-4 rounded-xl bg-brand-gold text-black font-semibold text-xs tracking-widest uppercase hover:bg-brand-goldHover transition-all flex items-center justify-center gap-3 shadow-[0_10px_30px_rgba(197,160,89,0.3)]">
+                    <span id="btnText">Send Project Inquiry</span>
+                    <i data-lucide="send" id="btnIcon" class="w-4 h-4"></i>
+                    <span id="btnSpinner" class="hidden w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin"></span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- SECTION 4: LOCATION & MAP SECTION -->
+    <section class="py-20 px-4 md:px-8 bg-brand-card relative border-t border-brand-border">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase mb-2 block">REGIONAL OFFICES</span>
+                <h2 class="font-serif text-3xl md:text-5xl text-white font-semibold mb-4">Find Us Across South India</h2>
+                <p class="text-gray-400 text-sm font-light">
+                    Visit our main experience center or contact regional office branches for in-person consultations.
+                </p>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="flex justify-center gap-3 mb-8">
+                <button onclick="switchTab('bengaluru', this)" class="office-tab active px-6 py-2.5 rounded-full bg-brand-gold text-black font-semibold text-xs tracking-wider uppercase transition-all">
+                    Bengaluru HQ
+                </button>
+                <button onclick="switchTab('chennai', this)" class="office-tab px-6 py-2.5 rounded-full bg-brand-dark text-gray-300 border border-white/10 hover:border-brand-gold text-xs tracking-wider uppercase transition-all">
+                    Chennai Branch
+                </button>
+                <button onclick="switchTab('hyderabad', this)" class="office-tab px-6 py-2.5 rounded-full bg-brand-dark text-gray-300 border border-white/10 hover:border-brand-gold text-xs tracking-wider uppercase transition-all">
+                    Hyderabad Branch
+                </button>
+            </div>
+
+            <!-- Tab Content Cards -->
+            <div id="officeContent" class="glass-panel rounded-3xl p-8 md:p-12 border border-brand-border max-w-4xl mx-auto">
+                <div id="bengaluru-view" class="office-view grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7">
+                        <span class="text-xs font-mono text-brand-gold uppercase block mb-1">HEADQUARTERS</span>
+                        <h3 class="font-serif text-2xl text-white font-semibold mb-3">Bengaluru Experience Center</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed mb-4">
+                            SAN Tower, 4th Floor, 100 Feet Road, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka 560038
+                        </p>
+                        <div class="space-y-2 text-xs text-gray-400 mb-6">
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-gold"></i><span>Dedicated Client Lounge & Material Sample Gallery</span></div>
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-gold"></i><span>On-site Basement Visitor Parking</span></div>
+                        </div>
+                        <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-gold/10 border border-brand-gold/40 text-brand-gold text-xs font-semibold uppercase tracking-wider hover:bg-brand-gold hover:text-black transition-colors">
+                            <span>Open In Google Maps</span>
+                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                    <div class="lg:col-span-5 rounded-2xl overflow-hidden border border-white/10 h-52">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop" alt="Bengaluru Office Lounge" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <div id="chennai-view" class="office-view hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7">
+                        <span class="text-xs font-mono text-brand-gold uppercase block mb-1">REGIONAL OFFICE</span>
+                        <h3 class="font-serif text-2xl text-white font-semibold mb-3">Chennai Regional Office</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed mb-4">
+                            Level 3, Vantage Plaza, MG Road, Adyar, Chennai, Tamil Nadu 600020
+                        </p>
+                        <div class="space-y-2 text-xs text-gray-400 mb-6">
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-gold"></i><span>Coastal Architecture Consultation Cell</span></div>
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-gold"></i><span>Valet Parking Available</span></div>
+                        </div>
+                        <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-gold/10 border border-brand-gold/40 text-brand-gold text-xs font-semibold uppercase tracking-wider hover:bg-brand-gold hover:text-black transition-colors">
+                            <span>Open In Google Maps</span>
+                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                    <div class="lg:col-span-5 rounded-2xl overflow-hidden border border-white/10 h-52">
+                        <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=800&auto=format&fit=crop" alt="Chennai Office Studio" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <div id="hyderabad-view" class="office-view hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7">
+                        <span class="text-xs font-mono text-brand-gold uppercase block mb-1">REGIONAL OFFICE</span>
+                        <h3 class="font-serif text-2xl text-white font-semibold mb-3">Hyderabad Regional Office</h3>
+                        <p class="text-xs text-gray-300 leading-relaxed mb-4">
+                            Plot 42, Road No. 36, Jubilee Hills, Hyderabad, Telangana 500033
+                        </p>
+                        <div class="space-y-2 text-xs text-gray-400 mb-6">
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-gold"></i><span>Luxury Villa Architecture Display</span></div>
+                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-gold"></i><span>Private Meeting Suites</span></div>
+                        </div>
+                        <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-gold/10 border border-brand-gold/40 text-brand-gold text-xs font-semibold uppercase tracking-wider hover:bg-brand-gold hover:text-black transition-colors">
+                            <span>Open In Google Maps</span>
+                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                    <div class="lg:col-span-5 rounded-2xl overflow-hidden border border-white/10 h-52">
+                        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=800&auto=format&fit=crop" alt="Hyderabad Office Lounge" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: WHAT HAPPENS NEXT? -->
+    <section class="py-20 px-4 md:px-8 bg-brand-dark relative border-t border-brand-border">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase mb-2 block">RESPONSE TIMELINE</span>
+                <h2 class="font-serif text-3xl md:text-5xl text-white font-semibold mb-4">What Happens Next?</h2>
+                <p class="text-gray-400 text-sm font-light">
+                    Our structured communication workflow ensures clarity from your initial inquiry to project site kickoff.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="p-8 rounded-3xl bg-brand-card border border-brand-border relative">
+                    <span class="w-12 h-12 rounded-2xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center font-mono font-bold text-brand-gold mb-6">01</span>
+                    <h3 class="font-serif text-2xl text-white font-semibold mb-3">Inquiry Review</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Our structural and design team reviews your site specs, plot geometry, local municipal rules, and initial requirements.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="p-8 rounded-3xl bg-brand-card border border-brand-border relative">
+                    <span class="w-12 h-12 rounded-2xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center font-mono font-bold text-brand-gold mb-6">02</span>
+                    <h3 class="font-serif text-2xl text-white font-semibold mb-3">Consultation & Site Visit</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        We schedule an in-person or virtual discussion with our senior architect to discuss budget tiers, spatial layouts, and soil conditions.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="p-8 rounded-3xl bg-brand-card border border-brand-border relative">
+                    <span class="w-12 h-12 rounded-2xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center font-mono font-bold text-brand-gold mb-6">03</span>
+                    <h3 class="font-serif text-2xl text-white font-semibold mb-3">Proposal & Roadmap</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        You receive a detailed BOQ cost breakdown, initial 3D visualization preview, and milestone construction timeline for your project.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: CLOSING CTA -->
+    <section class="py-24 px-4 md:px-8 bg-gradient-to-b from-brand-dark via-brand-card to-black relative overflow-hidden border-t border-brand-border">
+        <div class="blueprint-grid absolute inset-0 opacity-20"></div>
+
+        <div class="max-w-4xl mx-auto relative z-10 text-center">
+            <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase mb-3 block">START PLANNING</span>
+            <h2 class="font-serif text-4xl md:text-6xl text-white font-semibold mb-6">
+                Your Project Starts With A <span class="gold-gradient-text italic font-normal">Conversation.</span>
+            </h2>
+            <p class="text-gray-300 text-sm md:text-base max-w-2xl mx-auto font-light mb-10">
+                Share your architectural ideas with SAN Construction and take the first step toward a space built to last generations.
+            </p>
+
+            <button onclick="scrollToSection('inquiryForm')" class="px-8 py-4 rounded-xl bg-brand-gold text-black font-semibold text-xs tracking-widest uppercase hover:bg-brand-goldHover transition-all inline-flex items-center gap-3 shadow-[0_10px_30px_rgba(197,160,89,0.3)]">
+                <span>Contact Our Engineering Team</span>
+                <i data-lucide="arrow-up" class="w-4 h-4"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-12 px-4 md:px-8 text-gray-500 text-xs border-t border-brand-border">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-brand-gold/10 border border-brand-gold/40 flex items-center justify-center text-brand-gold font-serif font-bold">
+                    S
+                </div>
+                <span class="text-gray-300 font-serif tracking-wider">SAN CONSTRUCTION PVT. LTD.</span>
+            </div>
+
+            <div class="flex gap-6">
+                <a href="index.html" class="hover:text-brand-gold transition-colors">Home Page</a>
+                <a href="about.html" class="hover:text-brand-gold transition-colors">About Us</a>
+                <a href="services.html" class="hover:text-brand-gold transition-colors">Services</a>
+                <a href="projects.html" class="hover:text-brand-gold transition-colors">Projects</a>
+                <a href="process.html" class="hover:text-brand-gold transition-colors">Our Process</a>
+            </div>
+
+            <p>© 2026 SAN Construction. ISO 9001:2015 Certified Turnkey Civil Engineering.</p>
+        </div>
+    </footer>
+
+    <!-- SUCCESS CONFIRMATION MODAL -->
+    <div id="successModal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-brand-card border border-brand-border rounded-3xl p-8 max-w-lg w-full text-center relative">
+            <div class="w-16 h-16 rounded-full bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold mx-auto mb-6">
+                <i data-lucide="check-circle-2" class="w-8 h-8"></i>
+            </div>
+
+            <span class="text-brand-gold text-xs font-mono uppercase block mb-1">INQUIRY RECEIVED</span>
+            <h3 class="font-serif text-3xl text-white font-semibold mb-2">Thank You!</h3>
+            <p class="text-xs text-gray-300 leading-relaxed mb-6">
+                Your project inquiry has been logged in our system. A senior civil engineer will reach out within 24 hours.
+            </p>
+
+            <div class="p-4 rounded-xl bg-brand-dark border border-white/5 text-left text-xs font-mono space-y-2 mb-6">
+                <div class="flex justify-between">
+                    <span class="text-gray-400">Reference No:</span>
+                    <span id="resRef" class="text-brand-gold font-bold">SAN-2026-9812</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-400">Client Name:</span>
+                    <span id="resName" class="text-white">-</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-400">Scope:</span>
+                    <span id="resScope" class="text-white">-</span>
+                </div>
+            </div>
+
+            <button onclick="closeModal('successModal')" class="w-full py-3.5 rounded-xl bg-brand-gold text-black font-semibold text-xs tracking-widest uppercase hover:bg-brand-goldHover transition-colors">
+                Close Confirmation
+            </button>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('scrollProgress').style.width = scrolled + '%';
+
+            const header = document.getElementById('mainHeader');
+            if (winScroll > 50) {
+                header.classList.add('py-3');
+                header.classList.remove('py-5');
+            } else {
+                header.classList.add('py-5');
+                header.classList.remove('py-3');
+            }
+        });
+
+        // Mobile Navigation Drawer Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileDrawer = document.getElementById('mobileDrawer');
+
+        mobileMenuBtn.addEventListener('click', toggleMobileDrawer);
+
+        function toggleMobileDrawer() {
+            mobileDrawer.classList.toggle('translate-x-full');
+        }
+
+        // Scroll to specific element helper
+        function scrollToSection(id) {
+            const el = document.getElementById(id);
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Copy Text Helper
+        function copyToClipboard(text, message) {
+            const temp = document.createElement('input');
+            temp.value = text;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            document.body.removeChild(temp);
+            alert(message);
+        }
+
+        // Office Location Tabs Switcher
+        function switchTab(office, btn) {
+            document.querySelectorAll('.office-tab').forEach(b => {
+                b.classList.remove('bg-brand-gold', 'text-black');
+                b.classList.add('bg-brand-dark', 'text-gray-300');
+            });
+            btn.classList.add('bg-brand-gold', 'text-black');
+            btn.classList.remove('bg-brand-dark', 'text-gray-300');
+
+            document.querySelectorAll('.office-view').forEach(v => v.classList.add('hidden'));
+            document.getElementById(office + '-view').classList.remove('hidden');
+        }
+
+        // Form Submit & Client Side Validation Logic
+        function handleInquirySubmit(e) {
+            e.preventDefault();
+
+            const fullName = document.getElementById('fullName').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const emailAddr = document.getElementById('emailAddr').value;
+            const projectType = document.getElementById('projectType').value;
+
+            // Submit loading animation state
+            const btnText = document.getElementById('btnText');
+            const btnIcon = document.getElementById('btnIcon');
+            const btnSpinner = document.getElementById('btnSpinner');
+            const submitBtn = document.getElementById('submitBtn');
+
+            btnText.innerText = "Processing Inquiry...";
+            btnIcon.classList.add('hidden');
+            btnSpinner.classList.remove('hidden');
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                // Populate Confirmation Modal Data
+                document.getElementById('resRef').innerText = 'SAN-2026-' + Math.floor(1000 + Math.random() * 9000);
+                document.getElementById('resName').innerText = fullName;
+                document.getElementById('resScope').innerText = projectType;
+
+                // Reset Button
+                btnText.innerText = "Send Project Inquiry";
+                btnIcon.classList.remove('hidden');
+                btnSpinner.classList.add('hidden');
+                submitBtn.disabled = false;
+
+                // Open Modal & Reset Form
+                document.getElementById('projectForm').reset();
+                openModal('successModal');
+            }, 1200);
+        }
+
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
+```
+
+The high-fidelity **Contact Us** page UI for **SAN Construction** (`contact.html`) is ready.

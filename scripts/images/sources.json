@@ -1,0 +1,104 @@
+{
+  "$comment": "Placeholder imagery. None of these photos show SAN Construction work. Unsplash photos are served via Lorem Picsum (Unsplash licence); Commons photos are CC0 or public domain. Run `npm run images` after editing.",
+  "images": [
+    { "name": "walk-1", "local": ".render-cache/house-1.png", "grade": false, "alt": "Illustration: Concept home at golden hour: a two-storey house with a tiled Kerala-style roof among coconut palms" },
+    { "name": "walk-1-tall", "local": ".render-cache/house-1-tall.png", "grade": false, "alt": "Illustration: Concept home at golden hour: a two-storey house with a tiled Kerala-style roof among coconut palms" },
+    { "name": "walk-2", "local": ".render-cache/house-2.png", "grade": false, "alt": "Illustration: Pillared entrance porch with a carved teak double door and brass lamps" },
+    { "name": "walk-2-tall", "local": ".render-cache/house-2-tall.png", "grade": false, "alt": "Illustration: Pillared entrance porch with a carved teak double door and brass lamps" },
+    { "name": "walk-3", "local": ".render-cache/house-3.png", "grade": false, "alt": "Illustration: Living room with a cream sofa, patterned rug and fluted timber media wall" },
+    { "name": "walk-3-tall", "local": ".render-cache/house-3-tall.png", "grade": false, "alt": "Illustration: Living room with a cream sofa, patterned rug and fluted timber media wall" },
+    { "name": "walk-4", "local": ".render-cache/house-4.png", "grade": false, "alt": "Illustration: Dining room with a teak table and pendant lights, framed by a carved jali screen" },
+    { "name": "walk-4-tall", "local": ".render-cache/house-4-tall.png", "grade": false, "alt": "Illustration: Dining room with a teak table and pendant lights, framed by a carved jali screen" },
+    { "name": "walk-5", "local": ".render-cache/house-5.png", "grade": false, "alt": "Illustration: Kitchen with teak-toned cabinets, stone counters and a window over the sink" },
+    { "name": "walk-5-tall", "local": ".render-cache/house-5-tall.png", "grade": false, "alt": "Illustration: Kitchen with teak-toned cabinets, stone counters and a window over the sink" },
+    { "name": "walk-6", "local": ".render-cache/house-6.png", "grade": false, "alt": "Illustration: Master bedroom with a timber headboard wall and bedside lamps" },
+    { "name": "walk-6-tall", "local": ".render-cache/house-6-tall.png", "grade": false, "alt": "Illustration: Master bedroom with a timber headboard wall and bedside lamps" },
+    { "name": "walk-7", "local": ".render-cache/house-7.png", "grade": false, "alt": "Illustration: Bathroom with stone walls, a walk-in shower and a floating vanity" },
+    { "name": "walk-7-tall", "local": ".render-cache/house-7-tall.png", "grade": false, "alt": "Illustration: Bathroom with stone walls, a walk-in shower and a floating vanity" },
+    { "name": "walk-8", "local": ".render-cache/house-8.png", "grade": false, "alt": "Illustration: Covered terrace with a sofa and lantern, looking out at sunset" },
+    { "name": "walk-8-tall", "local": ".render-cache/house-8-tall.png", "grade": false, "alt": "Illustration: Covered terrace with a sofa and lantern, looking out at sunset" },
+    { "name": "walk-9", "local": ".render-cache/house-9.png", "grade": false, "alt": "Illustration: Side garden with lawn, palms and garden lights beside the house" },
+    { "name": "walk-9-tall", "local": ".render-cache/house-9-tall.png", "grade": false, "alt": "Illustration: Side garden with lawn, palms and garden lights beside the house" },
+    { "name": "walk-10", "local": ".render-cache/house-10.png", "grade": false, "alt": "Illustration: Aerial view of the house, its tiled roofs and gardens" },
+    { "name": "walk-10-tall", "local": ".render-cache/house-10-tall.png", "grade": false, "alt": "Illustration: Aerial view of the house, its tiled roofs and gardens" },
+    { "name": "walk-11", "local": ".render-cache/house-11.png", "grade": false, "alt": "Illustration: The house at night, glowing from within" },
+    { "name": "walk-11-tall", "local": ".render-cache/house-11-tall.png", "grade": false, "alt": "Illustration: The house at night, glowing from within" },
+    { "name": "walk-12", "local": ".render-cache/house-12.png", "grade": false, "alt": "Illustration: The house at night seen from the road" },
+    { "name": "walk-12-tall", "local": ".render-cache/house-12-tall.png", "grade": false, "alt": "Illustration: The house at night seen from the road" },
+    { "name": "render-hero-wide", "local": ".render-cache/hero-wide.png", "grade": false, "alt": "Illustration of a modern mid-rise building at dusk with warmly lit windows" },
+    { "name": "render-hero-medium", "local": ".render-cache/hero-medium.png", "grade": false, "alt": "Illustration of a modern mid-rise building at dusk with warmly lit windows" },
+    { "name": "render-hero-tall", "local": ".render-cache/hero-tall.png", "grade": false, "alt": "Illustration of a modern mid-rise building at dusk with warmly lit windows" },
+    { "name": "render-stage-1", "local": ".render-cache/stage-1.png", "grade": false, "alt": "Survey lines marking out an empty building site" },
+    { "name": "render-stage-2", "local": ".render-cache/stage-2.png", "grade": false, "alt": "Wireframe outline of the planned building over the site grid" },
+    { "name": "render-stage-3", "local": ".render-cache/stage-3.png", "grade": false, "alt": "Foundation plinth laid within the outline of the planned building" },
+    { "name": "render-stage-4", "local": ".render-cache/stage-4.png", "grade": false, "alt": "Concrete floor slabs and columns rising floor by floor" },
+    { "name": "render-stage-5", "local": ".render-cache/stage-5.png", "grade": false, "alt": "Glazing and bronze fins enclosing each floor of the structure" },
+    { "name": "render-stage-6", "local": ".render-cache/stage-6.png", "grade": false, "alt": "The completed building with its windows lit" },
+    { "name": "tower-dark", "picsum": 983, "alt": "Dark glass tower rising at a sharp angle against a black sky" },
+    { "name": "towers-fog", "picsum": 972, "alt": "Glass towers converging overhead into low cloud" },
+    { "name": "towers-sky", "picsum": 677, "alt": "Four tower corners framing a cross of pale sky, seen from below" },
+    { "name": "glass-towers", "picsum": 1031, "alt": "Two glass towers narrowing upward against a grey sky" },
+    { "name": "spiral-stair", "picsum": 679, "alt": "Concrete spiral staircase curling around a small round window" },
+    { "name": "lightwell", "picsum": 315, "alt": "View up a planted lightwell between apartment floors toward bright sky" },
+    { "name": "tools", "picsum": 491, "alt": "Hammer, axe, pliers and work gloves laid out on dark timber" },
+    { "name": "city-window", "picsum": 378, "alt": "Three people at a tall window looking out over a city" },
+    { "name": "apartment-facade", "picsum": 887, "alt": "White residential block with repeating balconies and windows" },
+    { "name": "office-night", "picsum": 1078, "alt": "Office tower at night with rows of lit windows" },
+    { "name": "studio-interior", "picsum": 625, "alt": "Bright room with a timber table, white chairs and large windows" },
+    { "name": "stair-opening", "picsum": 954, "alt": "Narrow opening in a white wall revealing a white staircase" },
+    { "name": "concrete-block", "picsum": 1054, "alt": "Weathered concrete apartment block with scattered small windows" },
+    {
+      "name": "steel-frame",
+      "commons": {
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Steel_frame_building_under_construction_in_Taiwan.jpg/1920px-Steel_frame_building_under_construction_in_Taiwan.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Steel_frame_building_under_construction_in_Taiwan.jpg",
+        "title": "Steel frame building under construction in Taiwan",
+        "creator": "SSJF01",
+        "license": "CC0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "crop": { "left": 0, "top": 200, "width": 1620, "height": 1080 },
+      "saturation": 0.4,
+      "alt": "Steel frame of a multi-storey building with a tower crane working on top"
+    },
+    {
+      "name": "scaffolding",
+      "commons": {
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Construction_worker_on_scaffolding_during_Mountbatten_House_redevelopment%2C_Chatham%2C_Kent.jpg/1920px-Construction_worker_on_scaffolding_during_Mountbatten_House_redevelopment%2C_Chatham%2C_Kent.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Construction_worker_on_scaffolding_during_Mountbatten_House_redevelopment,_Chatham,_Kent.jpg",
+        "title": "Construction worker on scaffolding during Mountbatten House redevelopment, Chatham, Kent",
+        "creator": "OathOn",
+        "license": "CC0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "crop": { "left": 0, "top": 80, "width": 1920, "height": 1280 },
+      "saturation": 0.5,
+      "alt": "Worker in a hard hat and high-visibility vest behind scaffolding on a concrete building"
+    },
+    {
+      "name": "foundation-forms",
+      "commons": {
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Forms_for_foundation_slab_%28917d75db-155d-451f-674d-d8cdb02477d9%29.jpg/1920px-Forms_for_foundation_slab_%28917d75db-155d-451f-674d-d8cdb02477d9%29.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Forms_for_foundation_slab_(917d75db-155d-451f-674d-d8cdb02477d9).jpg",
+        "title": "Forms for foundation slab",
+        "creator": "National Park Service",
+        "license": "Public domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      },
+      "alt": "Timber formwork for a foundation slab on a cleared site, with a roller in the foreground"
+    },
+    {
+      "name": "rebar-slab",
+      "commons": {
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Rayburn_Garage_-_New_Concrete_%2824452346097%29.jpg/1920px-Rayburn_Garage_-_New_Concrete_%2824452346097%29.jpg",
+        "page": "https://commons.wikimedia.org/wiki/File:Rayburn_Garage_-_New_Concrete_(24452346097).jpg",
+        "title": "Rayburn Garage - New Concrete",
+        "creator": "Architect of the Capitol",
+        "license": "Public domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      },
+      "crop": { "left": 0, "top": 0, "width": 1920, "height": 1280 },
+      "alt": "Grid of reinforcing steel laid over timber formwork, ready for a concrete pour"
+    }
+  ]
+}

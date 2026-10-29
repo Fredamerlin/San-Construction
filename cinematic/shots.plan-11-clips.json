@@ -1,0 +1,16 @@
+{
+  "sampleFps": 10,
+  "shots": [
+    { "clip": "c01.mp4", "focusX": 0.5 },
+    { "clip": "c02.mp4", "focusX": 0.5, "reverse": true },
+    { "clip": "c03.mp4", "focusX": 0.5, "reverse": true },
+    { "clip": "c04.mp4", "focusX": 0.5 },
+    { "clip": "c05.mp4", "focusX": 0.5 },
+    { "clip": "c06.mp4", "focusX": 0.5 },
+    { "clip": "c07.mp4", "focusX": 0.5 },
+    { "clip": "c08.mp4", "focusX": 0.5 },
+    { "clip": "c09.mp4", "focusX": 0.5 },
+    { "clip": "c10.mp4", "focusX": 0.5 },
+    { "clip": "c11.mp4", "focusX": 0.5 }
+  ]
+}

@@ -1,0 +1,1 @@
+function e(e){let t=document.getElementById(e);if(!t)return;let n=window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;t.scrollIntoView({behavior:n?`auto`:`smooth`,block:`start`}),t.hasAttribute(`tabindex`)||t.setAttribute(`tabindex`,`-1`),t.focus({preventScroll:!0})}function t(t){return n=>{n.preventDefault(),e(t)}}export{e as n,t};

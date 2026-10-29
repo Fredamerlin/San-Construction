@@ -1,0 +1,78 @@
+{
+  "version": "mvt5wymj",
+  "frames": 562,
+  "sets": {
+    "d": {
+      "width": 1094,
+      "height": 720
+    },
+    "m": {
+      "width": 432,
+      "height": 720
+    }
+  },
+  "shots": [
+    {
+      "start": 0,
+      "end": 96
+    },
+    {
+      "start": 97,
+      "end": 137
+    },
+    {
+      "start": 138,
+      "end": 173
+    },
+    {
+      "start": 174,
+      "end": 270
+    },
+    {
+      "start": 271,
+      "end": 367
+    },
+    {
+      "start": 368,
+      "end": 464
+    },
+    {
+      "start": 465,
+      "end": 561
+    }
+  ],
+  "scenes": [
+    {
+      "label": "Exterior",
+      "frame": 0
+    },
+    {
+      "label": "Entrance",
+      "frame": 96
+    },
+    {
+      "label": "Living",
+      "frame": 152
+    },
+    {
+      "label": "Dining",
+      "frame": 193
+    },
+    {
+      "label": "Kitchen",
+      "frame": 270
+    },
+    {
+      "label": "Bedroom",
+      "frame": 367
+    },
+    {
+      "label": "Bathroom",
+      "frame": 464
+    },
+    {
+      "label": "SAN",
+      "frame": 561
+    }
+  ]
+}

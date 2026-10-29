@@ -1,0 +1,21 @@
+CLIP c02 (made backwards in Gemini; the website plays it in reverse)
+Seen on the website: porch -> through the front door -> into the living room (where clip 3 starts)
+
+MAKE CLIP 3 FIRST. Claude then puts the image to attach in this folder as: attach-this.png
+(= the living room view at the end of clip 3)
+
+ATTACH THIS ONE IMAGE in Gemini (click +):  attach-this.png
+Do NOT attach start.png or end.png for this clip.
+
+TYPE:  Create a video from this image:
+THEN PASTE:
+
+The camera starts exactly on this living room view, then slowly and smoothly dollies straight backward toward the front entrance: it passes back through the open carved teak front door and ends outside on the covered entrance porch, looking in through the open doorway at the living room. The porch: white columns on dark granite bases, a teak ceiling with warm downlights and a brass hanging lantern, dark granite steps with small step lights, potted tropical plants, and warm golden sunset light outside.
+
+Photorealistic architectural visualization film of a luxury modern Kerala-style Indian home, like a premium real-estate launch film. Real-world materials and scale, physically accurate shadows and reflections, crisp detail, cinematic colour grade. One continuous, slow, perfectly smooth stabilized backward camera move. No cuts, no people, no text.
+
+CHECK: the first second must look exactly like attach-this.png (the living room).
+The camera must move BACKWARDS the whole time and finish outside on the porch.
+
+SAVE AS:  C:\san\cinematic\clips\c02   (Windows adds .mp4)
+Then tell Claude.

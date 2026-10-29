@@ -1,0 +1,81 @@
+@import 'tailwindcss';
+@import './tokens.css';
+@import './brand.css';
+
+/* Full-viewport height that doesn't jump when mobile browser bars show/hide:
+   svh where supported, vh as the fallback. */
+@utility min-h-viewport {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-charcoal);
+    color: var(--color-bone);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    /* Keeps anchored headings clear of the fixed header */
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    min-height: 100vh;
+    min-height: 100svh;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+
+  /* Italic accent words inside display headings (Instrument Serif italic) */
+  :where(h1, h2, h3) em {
+    font-style: italic;
+    letter-spacing: -0.005em;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background-color: var(--color-bronze);
+    color: var(--color-night);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-bronze);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Bronze is too low-contrast on warm white; light sections use a dark ring */
+  .on-light :focus-visible {
+    outline-color: var(--color-night);
+  }
+
+  /* Programmatic focus targets (main region after navigation) need no ring */
+  [tabindex='-1']:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

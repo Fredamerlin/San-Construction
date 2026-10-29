@@ -1,0 +1,20 @@
+CLIP c06: Master bedroom to en-suite bathroom
+Purpose: Shows the attached bathroom and its finishes.
+Camera: Slow pan left, then glide forward through a doorway
+Duration: 5 s    Aspect: 16:9 (widescreen)    Quality: 1080p (the highest available)
+
+UPLOAD AS START FRAME:  start.png   <- last frame of c05.mp4
+UPLOAD AS END FRAME:    end.png     <- storyboard keyframe 07 (original/panel-07.png, not upscaled yet)
+
+--- PROMPT (paste into the prompt box) ---
+Slow pan to the left and glide forward through a doorway into the en-suite bathroom: warm natural stone walls and floor, a backlit mirror, a floating wooden vanity with a white vessel basin, a frameless glass walk-in shower with a rain shower head, a small window and a potted plant.
+
+Photorealistic architectural visualization film of a luxury modern Kerala-style Indian home, like a premium real-estate launch film. Real-world materials and scale, natural light, physically accurate shadows and reflections, crisp detail, cinematic colour grade, soft evening haze. One continuous, slow, perfectly smooth stabilized camera move (gimbal or drone). No cuts.
+
+The interior (the same home as the start image): cream lime-plaster walls, dark grey polished stone floors, teak and cane furniture, wooden lattice jali screens, brass dome pendant lamps, terracotta and copper pots on open wooden shelves, jute rugs, potted plants, white-framed windows with soft natural daylight and lush greenery outside.
+
+--- NEGATIVE PROMPT (paste into the negative prompt box) ---
+cartoon, CGI game graphics, low-poly, 3D toy model, clay render, illustration, painting, anime, oversaturated, plastic-looking materials, warped or bending walls, morphing architecture, melting objects, flickering lights, house design changing, people, animals, moving cars, text, captions, logos, watermark, fisheye distortion, shaky handheld camera, fast motion, cuts, scene change
+
+Save the best take as:  cinematic/clips/c06.mp4
+Then run:               node scripts/cinematic/last-frame.mjs c06

@@ -1,0 +1,13 @@
+{
+  "sampleFps": 12,
+  "crop": { "left": 0.035, "top": 0, "width": 0.855, "height": 1 },
+  "shots": [
+    { "clip": "c01.mp4", "focusX": 0.5, "scenes": [{ "label": "Exterior", "at": 0 }, { "label": "Entrance", "at": 1 }] },
+    { "clip": "old/c02-rejected.mp4", "from": 3.2, "to": 6.5, "dissolve": 0.6, "focusX": 0.5 },
+    { "clip": "old/c03-rejected.mp4", "from": 0, "to": 2.9, "dissolve": 0.6, "focusX": 0.45, "scenes": [{ "label": "Living", "at": 0.4 }] },
+    { "clip": "c04.mp4", "dissolve": 0.6, "focusX": 0.5, "scenes": [{ "label": "Dining", "at": 0.2 }, { "label": "Kitchen", "at": 1 }] },
+    { "clip": "c05.mp4", "focusX": 0.5, "scenes": [{ "label": "Bedroom", "at": 1 }] },
+    { "clip": "c06.mp4", "dissolve": 0.5, "focusX": 0.55, "scenes": [{ "label": "Bathroom", "at": 1 }] },
+    { "clip": "c01.mp4", "reverse": true, "dissolve": 0.8, "focusX": 0.5, "scenes": [{ "label": "SAN", "at": 1 }] }
+  ]
+}

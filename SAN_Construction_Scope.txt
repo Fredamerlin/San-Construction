@@ -1,0 +1,962 @@
+SAN CONSTRUCTION WEBSITE
+DETAILED PROJECT SCOPE
+Claude Code Implementation Specification
+Version: 1.0
+Date: 27 October 2026
+
+============================================================
+1. PROJECT OVERVIEW
+============================================================
+
+Project name: SAN Construction
+Project type: Multi-page, static-first construction company marketing website
+Primary goal: Present SAN Construction as a premium, trustworthy construction brand and generate qualified enquiries.
+Implementation approach: React frontend with carefully scoped 3D and cinematic animation.
+Target implementation tool: Claude Code
+
+The website should feel like a high-end architecture and construction portfolio: cinematic, polished, confident, image-led, easy to navigate, and fast on mobile devices. It must not look like a generic template or allow visual effects to interfere with reading, navigation, accessibility, or conversion.
+
+The first version uses premium placeholder images and provisional copy. The project must make it straightforward to replace placeholders with approved company information later.
+
+Core outcomes:
+- Explain the company's construction-related services.
+- Showcase projects and construction quality.
+- Build trust through process, capabilities, values, and clear contact details.
+- Encourage visitors to submit an enquiry or contact the company.
+- Provide an immersive visual experience using selective 3D, scroll-linked motion, and cinematic transitions.
+- Work reliably on desktop, tablet, and mobile.
+- Keep content pages indexable and accessible.
+
+============================================================
+2. ASSUMPTIONS AND ITEMS TO CONFIRM
+============================================================
+
+The following are assumptions, not confirmed facts. Claude Code must not invent them as real company facts.
+
+A1. “All construction-related services” is a broad category. Initial service categories may include residential construction, commercial construction, renovation, interior/fit-out work, architectural coordination, project planning, and construction consultation. These must be clearly marked as provisional until SAN Construction confirms its actual services.
+
+A2. The company name is “SAN Construction”. No approved logo, brand guide, address, phone number, email, registration details, project portfolio, testimonials, awards, or years of experience have been provided.
+
+A3. Use temporary brand styling and clearly identifiable placeholder content. Never invent genuine client names, completed projects, certifications, awards, reviews, project values, statistics, or claims.
+
+A4. The site is primarily static and does not require a custom database, login system, CMS, admin dashboard, or backend API for the initial release.
+
+A5. The enquiry form must send email through a third-party form/email service. The provider, destination email, account, API key, and deployment environment have not yet been selected. The form must not pretend to send successfully until the service confirms success.
+
+A6. 3D assets may use a licensed sample model, a placeholder GLB/GLTF model, or a carefully designed 3D scene. No custom building model has been supplied. Use assets with clear licensing and keep a graceful fallback.
+
+A7. The intended visual direction is luxury cinematic: dark charcoal/black, warm white, restrained bronze/gold accents, architectural imagery, generous spacing, strong typography, and controlled motion. Final brand colors can be adjusted later.
+
+A8. The site language is English unless the owner requests additional languages.
+
+A9. Use a modern evergreen-browser baseline. Do not promise support for obsolete browsers.
+
+A10. The initial release should be deployable to a static hosting provider such as Vercel, Netlify, or another compatible host. Final provider is undecided.
+
+A11. Placeholder contact information must never be displayed as if it were genuine. If real contact details are unavailable, use a clearly marked development placeholder and disable misleading contact actions until configured.
+
+A12. Do not add online payments, user accounts, booking systems, project-management dashboards, or other unrequested features.
+
+Before launch, the owner should confirm:
+- Actual service list and service descriptions.
+- Logo, brand colors, and fonts if available.
+- Company location and service area.
+- Official phone, WhatsApp, and email details.
+- Real projects and approved images.
+- Approved company profile and claims.
+- Email form provider and destination inbox.
+- Preferred domain and hosting.
+- Privacy notice and any required consent wording.
+
+============================================================
+3. TECHNOLOGY STACK
+============================================================
+
+Required:
+- React
+- Vite
+- JavaScript or TypeScript; prefer TypeScript for maintainability unless the existing repository establishes another convention.
+- React Router for multiple-page navigation.
+- Tailwind CSS or a consistent CSS architecture. Do not mix styling systems without a reason.
+- Three.js with React Three Fiber and Drei for interactive 3D.
+- GSAP with ScrollTrigger for complex scroll-controlled sequences where genuinely needed.
+- Framer Motion (Motion for React) for component-level transitions and interface motion.
+- Lucide React for icons.
+- A form validation approach with accessible client-side validation.
+- A third-party email/form service selected before production launch.
+
+Dependency rules:
+- Use 3D, GSAP, and Framer Motion selectively. Avoid implementing the same animation with multiple libraries.
+- Prefer Framer Motion for entrances, hover states, and route transitions.
+- Prefer GSAP/ScrollTrigger for complex timeline-based scroll sequences.
+- Prefer React Three Fiber for 3D scenes.
+- Use plain CSS for simple transitions.
+- Verify current package compatibility before installing dependencies.
+- Do not install libraries for features that can be implemented cleanly without them.
+- Keep all secrets out of source control and client-visible code.
+
+Suggested setup commands (adjust if the repository already exists):
+npm create vite@latest san-construction -- --template react-ts
+cd san-construction
+npm install
+npm install react-router-dom framer-motion three @react-three/fiber @react-three/drei gsap lucide-react
+npm install -D tailwindcss @tailwindcss/vite
+
+Follow the current official Tailwind/Vite setup for the installed version rather than copying outdated configuration.
+
+============================================================
+4. BRAND AND VISUAL DIRECTION
+============================================================
+
+Visual personality:
+- Premium, architectural, cinematic, precise, trustworthy.
+- Confident rather than loud.
+- Strong photography and composition.
+- Clear visual hierarchy and generous negative space.
+- Animation supports the content rather than becoming a distraction.
+
+Provisional palette:
+- Deep charcoal: #111111 or a nearby neutral.
+- Near-black: #080808 for selected cinematic sections.
+- Warm white: #F5F2EC.
+- Muted stone: #B8B2A8.
+- Restrained bronze/gold accent: #B8945B.
+- Mid-grey surfaces and borders for secondary elements.
+
+These are provisional tokens, not a final brand guide. Maintain contrast and do not use gold for small text where readability is poor.
+
+Typography:
+- Use a distinctive display face for major headings and a highly readable sans-serif for body copy.
+- Use locally hosted or approved web fonts when possible; otherwise use robust fallbacks.
+- Avoid too many font families or weights.
+- Headings should feel editorial and architectural, with controlled line lengths.
+- Body text should remain comfortable to read on mobile.
+
+Layout:
+- Use a consistent responsive content container.
+- Use an intentional grid and rhythm.
+- Avoid excessive rounded cards and generic gradient backgrounds.
+- Use full-bleed photography selectively.
+- Use subtle borders and restrained shadows.
+- Avoid visual clutter and excessive decorative elements.
+
+Imagery:
+- Use premium architecture, construction details, materials, interiors, workers, and completed-building imagery as placeholders.
+- Use consistent image treatment and crop.
+- Optimize image sizes and formats.
+- Record source and license information for every external asset.
+- Do not imply a stock image is a real SAN Construction project. Mark sample portfolio entries as “Concept”, “Sample project”, or otherwise clearly provisional until replaced.
+- Do not scrape images from websites without permission.
+
+============================================================
+5. INFORMATION ARCHITECTURE AND ROUTES
+============================================================
+
+Create these routes:
+
+1. /                 Home
+2. /about            About SAN Construction
+3. /services         Services overview
+4. /services/:slug   Individual service detail page
+5. /projects         Projects / portfolio
+6. /projects/:slug   Individual project detail page
+7. /process          Our process
+8. /contact          Contact and enquiry
+9. *                 Custom 404 page
+
+If scope or time requires simplifying, keep the route architecture extensible and document any route intentionally postponed. Do not create dead links.
+
+Global navigation:
+- Home
+- About
+- Services (dropdown or accessible menu)
+- Projects
+- Process
+- Contact
+- A prominent “Discuss Your Project” or “Request a Consultation” CTA
+
+Navigation requirements:
+- Sticky or intelligently changing header.
+- Header can begin transparent over the hero and become solid on scroll if appropriate.
+- Clear active-route indication.
+- Keyboard-operable dropdowns and mobile menu.
+- Mobile menu opens and closes reliably, closes after navigation, and supports Escape.
+- Prevent background scrolling when a full-screen mobile menu is open.
+- Keep the main contact CTA discoverable.
+
+Global footer:
+- Brand mark/name.
+- Short approved company description.
+- Quick navigation.
+- Service links.
+- Contact details only when supplied.
+- Social links only when real URLs are supplied.
+- Privacy notice link when the policy exists.
+- Copyright line using the current year dynamically.
+- No dead or invented social/contact links.
+
+============================================================
+6. PAGE-BY-PAGE REQUIREMENTS
+============================================================
+
+6.1 HOME PAGE
+
+Purpose:
+Make a strong first impression, communicate the brand, and guide users toward services, projects, and enquiries.
+
+Sections:
+1. Cinematic hero
+   - Full viewport or near-full viewport composition.
+   - Headline about building spaces with quality and purpose; mark copy as provisional.
+   - Short supporting statement.
+   - Primary CTA: “Discuss Your Project”.
+   - Secondary CTA: “Explore Our Work”.
+   - Selective 3D building/architectural scene or high-quality video/image fallback.
+   - Strong text contrast and clear visual focus.
+   - Do not delay access to navigation or the main message while 3D loads.
+
+2. Intro / brand statement
+   - Brief positioning statement.
+   - Optional architectural linework or restrained motion.
+   - No unverified claims.
+
+3. Services preview
+   - Cards or editorial rows linking to service pages.
+   - Each has title, short description, image/icon, and accessible link.
+   - Service list is provisional pending company confirmation.
+
+4. Featured projects
+   - Premium image-led grid.
+   - Clearly label all placeholder projects.
+   - Link to project detail pages.
+
+5. Why SAN Construction / differentiators
+   - Use values such as communication, planning, craftsmanship, and transparency only as proposed brand messaging until approved.
+   - Do not invent numeric performance claims.
+
+6. Process preview
+   - Brief stages from consultation to handover.
+   - Link to the Process page.
+
+7. Trust / quality section
+   - Explain quality and safety principles in general language.
+   - No invented certifications, guarantees, client logos, awards, or testimonials.
+
+8. Final CTA
+   - Strong, uncluttered enquiry prompt.
+
+9. Footer
+
+6.2 ABOUT PAGE
+
+Sections:
+- Hero with editorial heading and architecture image.
+- Company introduction using provisional copy.
+- Mission and vision only as draft content until approved.
+- Values / working principles.
+- Team or leadership section only if real names and approved photos are supplied.
+- CTA to contact.
+- Do not invent the company founding date, founder names, team size, or experience.
+
+6.3 SERVICES OVERVIEW PAGE
+
+Requirements:
+- Explain the confirmed service categories.
+- Use clear, scannable sections or cards.
+- Each service links to a dedicated detail page.
+- Include a contact CTA.
+- Initial candidate categories, subject to confirmation:
+  a. Residential construction
+  b. Commercial construction
+  c. Renovation and remodeling
+  d. Interior / fit-out work
+  e. Planning and project coordination
+  f. Construction consultation
+- Do not present a service as officially offered until confirmed.
+
+6.4 SERVICE DETAIL PAGE
+
+Reusable template:
+- Service hero with title, short summary, and image.
+- Overview and typical customer needs.
+- Scope / what the service may include.
+- High-level process.
+- Related projects where available.
+- FAQ section if useful and approved.
+- CTA to request a consultation.
+- Breadcrumbs.
+- SEO title and description per service.
+- Do not make legal, engineering, safety, cost, or delivery guarantees without approved wording.
+
+6.5 PROJECTS PAGE
+
+Requirements:
+- Editorial project gallery with responsive grid.
+- Optional category filters only if the project set supports them.
+- Filters must be keyboard accessible and have a clear selected state.
+- Each card links to a project detail route.
+- Use optimized images with meaningful alt text.
+- Label placeholder items clearly.
+- Do not invent client names, addresses, budgets, dates, square footage, completion status, or outcomes.
+
+6.6 PROJECT DETAIL PAGE
+
+Reusable template:
+- Project title and type.
+- Hero image or gallery.
+- Project overview.
+- Project type, location, status, and year only when verified.
+- Challenge / approach / outcome sections only when supported by real project information.
+- Related projects.
+- CTA.
+- Image gallery controls must be keyboard accessible and usable on mobile.
+- Placeholder projects must be explicitly marked as concepts/samples.
+
+6.7 PROCESS PAGE
+
+Suggested steps, subject to owner approval:
+1. Initial enquiry
+2. Requirement discussion
+3. Site review / feasibility
+4. Proposal and planning
+5. Execution and progress communication
+6. Quality checks and handover
+
+Requirements:
+- Use a clear timeline or numbered editorial sequence.
+- Animate stages subtly as they enter view.
+- Explain that actual steps vary by project when appropriate.
+- Avoid promising exact timeframes or approvals.
+
+6.8 CONTACT PAGE
+
+Sections:
+- Contact hero.
+- Enquiry form.
+- Official contact details once supplied.
+- Service area / map only if verified and genuinely useful.
+- Expected next-step explanation only if the company approves it.
+- Privacy notice link or concise data-use explanation.
+- Do not display a fake map pin, address, email, phone, or opening hours.
+
+6.9 404 PAGE
+
+Requirements:
+- Branded but simple.
+- Clear “Back to Home” link.
+- No broken or blank screen for unknown routes.
+
+============================================================
+7. ENQUIRY FORM AND EMAIL DELIVERY
+============================================================
+
+The website needs a real email delivery integration, not just a visual form.
+
+Recommended implementation:
+- Prefer a form service or serverless endpoint that safely sends email.
+- A client-side email SDK may be used only if its documented public-key model is designed for frontend use, the account is configured securely, and abuse prevention is in place.
+- Never expose SMTP credentials, private API keys, or secret tokens in React source, Vite environment variables prefixed with VITE_, or the built bundle.
+- If a secret is required, send the form to a server-side endpoint/serverless function or use a reputable form provider that supports secure static-site integration.
+
+Suggested fields:
+- Full name (required)
+- Email (required, valid format)
+- Phone (optional unless owner requires it)
+- Service of interest (select; options must match confirmed services)
+- Project location (optional)
+- Approximate budget (optional; only if owner wants it)
+- Message / project description (required)
+- Consent checkbox or privacy acknowledgement if required by the selected service and applicable law
+- Hidden anti-spam field or provider-supported spam prevention
+
+Validation:
+- Validate required fields and formats on the client for usability.
+- Treat server/provider validation as authoritative.
+- Show inline field errors with text, not color alone.
+- Preserve entered values when submission fails.
+- Prevent accidental duplicate submissions while a request is in progress.
+- Disable the submit button during submission and show progress text.
+- Show a clear success message only after confirmed service success.
+- Show a useful failure message and a retry path if sending fails.
+- Never expose raw server errors, credentials, or stack traces.
+- Add provider-supported CAPTCHA/rate limits/honeypot controls where appropriate.
+- Avoid collecting unnecessary personal data.
+- Define retention and privacy wording before launch.
+
+Required states:
+- Idle
+- Client-side validation error
+- Submitting
+- Success
+- Provider/network failure
+- Spam/blocked submission if applicable
+
+Configuration:
+- Keep public configuration in documented environment variables.
+- Keep private secrets in hosting provider secret settings.
+- Provide `.env.example` with placeholder names only, never actual secrets.
+- Add setup instructions for the selected provider.
+- Until provider credentials and destination email are configured, clearly label the form as not production-ready. Do not simulate successful email delivery.
+
+Testing:
+- Valid submission.
+- Missing required values.
+- Invalid email.
+- Network/provider error.
+- Repeated-click handling.
+- Mobile keyboard and field behavior.
+- Keyboard-only operation.
+- Confirmation that the email reaches the intended inbox and does not expose secrets.
+
+============================================================
+8. 3D EXPERIENCE REQUIREMENTS
+============================================================
+
+The 3D experience should be premium and intentional, not a technical demo.
+
+Preferred approach:
+- Use React Three Fiber and Drei for a hero scene or selected architectural feature.
+- Use a GLB/GLTF model with known licensing, or create a lightweight procedural architectural composition.
+- Consider camera movement, subtle model rotation, lighting, material detail, and restrained parallax.
+- Connect scrolling to a small number of deliberate scene changes when it adds narrative value.
+- Use GSAP ScrollTrigger for complex, pinned scroll sequences only when the experience remains usable on small screens.
+- Never make the user scroll through a long animation before reaching useful content.
+- Do not force scroll hijacking or lock normal browser scrolling.
+
+Performance and fallback:
+- Lazy-load the 3D scene when practical.
+- Do not block the initial headline, navigation, or CTA on model loading.
+- Provide a static image or CSS fallback if WebGL is unavailable, the model fails, or reduced-motion preferences are active.
+- Optimize geometry, texture sizes, draw calls, and model file size.
+- Avoid huge uncompressed textures.
+- Limit simultaneous lights, shadows, post-processing, and particle effects.
+- Pause or reduce animation when the scene is off-screen or the page is hidden, where feasible.
+- Avoid mobile overheating, excessive battery use, and continuous unnecessary rendering.
+- Respect prefers-reduced-motion.
+- Make all important information available in regular HTML, not only inside the 3D canvas.
+- Ensure 3D content does not block links, buttons, or keyboard focus.
+- Use a loading indicator only if loading is noticeable, and avoid a fake progress percentage.
+- Test on integrated graphics and mid-range mobile devices.
+
+============================================================
+9. MOTION AND INTERACTION DESIGN
+============================================================
+
+Animation principles:
+- Motion must support hierarchy, storytelling, and feedback.
+- Use consistent easing and timing.
+- Keep interactions responsive and predictable.
+- Avoid animating every element.
+- Avoid excessive bouncing, flashing, spinning, or competing effects.
+
+Suggested motion system:
+- Short hover/focus transitions for buttons and links.
+- Gentle opacity/vertical reveal for section content.
+- Staggered card reveals with restrained offsets.
+- Image reveal or clip-path transitions used selectively.
+- Header background transition on scroll.
+- Page transitions that do not delay navigation.
+- Scroll-triggered process timeline.
+- Hero 3D camera/model movement.
+- Small interactive feedback for form states.
+
+Motion implementation:
+- Use Framer Motion for local component transitions and route-level effects.
+- Use GSAP/ScrollTrigger only for complex timeline and scroll choreography.
+- Clean up ScrollTrigger instances, event listeners, observers, animation timelines, and RAF loops when components unmount.
+- Do not use React state updates on every animation frame when a ref or animation library can handle the visual update.
+- Avoid hydration-specific patterns unless the project later adds SSR.
+- Keep animation behavior consistent when users navigate directly to a nested route.
+- Ensure all interactive elements have visible focus states and usable hover/focus behavior.
+
+Reduced motion:
+- Respect `prefers-reduced-motion: reduce`.
+- Remove or simplify scroll-linked motion, parallax, automatic camera movement, and nonessential transitions.
+- Never rely on animation to communicate essential information.
+
+============================================================
+10. RESPONSIVE DESIGN
+============================================================
+
+Design mobile-first and test at these representative widths:
+- 320 px
+- 375 px
+- 390 px
+- 430 px
+- 768 px
+- 1024 px
+- 1280 px
+- 1440 px and wider
+
+Requirements:
+- No horizontal overflow.
+- Headings wrap naturally and do not collide with controls.
+- Use fluid typography where appropriate with sensible minimum and maximum sizes.
+- Navigation becomes a working mobile menu at appropriate breakpoints.
+- Buttons and form controls have comfortable touch targets (aim for approximately 44 x 44 CSS pixels).
+- Use responsive image sources or appropriate image sizing.
+- Reflow grids naturally rather than shrinking desktop layouts.
+- Keep important CTAs visible without covering content.
+- Use `100svh`/modern viewport units carefully with fallbacks where needed.
+- Do not depend on hover for core actions.
+- Reduce or replace heavy 3D effects on mobile when needed.
+- Test landscape orientation and long pages.
+- Avoid fixed elements covering content or the mobile browser controls.
+
+============================================================
+11. ACCESSIBILITY
+============================================================
+
+Target WCAG 2.2 AA as a project goal.
+
+Requirements:
+- Semantic HTML landmarks: header, nav, main, section, footer.
+- One clear main heading per page and logical heading order.
+- Keyboard access for all navigation and controls.
+- Visible keyboard focus indicators.
+- Sufficient text and interface contrast.
+- Accessible labels for all form controls.
+- Programmatically associated error messages.
+- Announce form status changes using appropriate live regions.
+- Meaningful alt text for informative images; empty alt for decorative images.
+- Buttons for actions and links for navigation.
+- Do not use color alone to indicate status.
+- Mobile menu and dialogs support keyboard use and Escape where appropriate.
+- Avoid focus traps unless a true modal is open; restore focus when a modal closes.
+- 3D canvas must not contain essential content inaccessible to screen readers.
+- Support reduced motion.
+- Ensure zooming is not disabled.
+- Use descriptive link names rather than “click here”.
+- Add a skip-to-content link.
+- Test keyboard-only navigation and at least one screen reader/browser combination before launch.
+
+============================================================
+12. PERFORMANCE AND ASSET OPTIMIZATION
+============================================================
+
+Performance goals (targets, not guarantees):
+- Aim for Core Web Vitals “good” thresholds on real-user data where measurable:
+  LCP <= 2.5 seconds
+  INP <= 200 milliseconds
+  CLS <= 0.1
+- Keep the initial JavaScript bundle as small as practical.
+- Lazy-load below-the-fold images and heavy route modules.
+- Prioritize the hero image or initial visual, but do not eagerly download every project image.
+- Use AVIF/WebP when supported with appropriate fallbacks.
+- Specify image dimensions or aspect ratios to prevent layout shifts.
+- Compress and resize images to their display dimensions.
+- Lazy-load 3D libraries and models.
+- Avoid excessive third-party scripts.
+- Avoid autoplay video with audio.
+- If using video, use a poster image, muted playback, sensible size, and reduced-motion fallback.
+- Use route-level code splitting where appropriate.
+- Remove unused dependencies and assets.
+- Check bundle size and production build output.
+- Use caching-friendly filenames and hosting defaults.
+- Avoid rendering an expensive 3D scene on every route if not needed.
+
+Measure with:
+- Browser DevTools Performance and Network panels.
+- Lighthouse or equivalent audit.
+- Production build, not only the development server.
+- Tests on a mid-range mobile device or throttled profile.
+
+============================================================
+13. SEO AND SHARING
+============================================================
+
+Requirements:
+- Unique page title and meta description for every route.
+- Semantic heading hierarchy and readable page copy.
+- Descriptive, human-readable URLs.
+- Canonical URL configuration once the production domain is known.
+- Open Graph and social sharing metadata.
+- Favicon and suitable brand/social preview image.
+- XML sitemap for public pages.
+- robots.txt appropriate to the deployment.
+- Descriptive image alt text.
+- Internal links between services, projects, and contact.
+- Breadcrumbs on service/project detail pages.
+- Structured data only when accurate and supported by real business data.
+- Do not invent address, opening hours, ratings, reviews, price ranges, or service areas for structured data.
+- Use a static rendering/pre-rendering strategy if required by the chosen deployment and SEO goals; if staying client-rendered, verify that all routes and metadata are configured correctly.
+- Ensure direct navigation and refresh on nested routes work on the deployment host.
+
+============================================================
+14. CONTENT, PLACEHOLDERS, AND ASSET MANAGEMENT
+============================================================
+
+Use a centralized content model rather than scattering placeholder copy across components.
+
+Suggested data files:
+- `src/data/site.ts`
+- `src/data/services.ts`
+- `src/data/projects.ts`
+- `src/data/navigation.ts`
+
+Each project item should support:
+- slug
+- title
+- category/type
+- summary
+- images and alt text
+- location (optional, only when verified)
+- year/status (optional, only when verified)
+- detailed content
+- placeholder flag
+
+Each service item should support:
+- slug
+- title
+- short summary
+- detail content
+- hero image and alt text
+- related project slugs
+- placeholder flag
+
+Requirements:
+- Mark unapproved copy and imagery in the data or development documentation.
+- Do not show internal placeholder markers to visitors as polished final copy unless the page is explicitly in demo mode.
+- Before production launch, block or flag unapproved project content for replacement.
+- Store assets in organized directories with descriptive filenames.
+- Maintain an asset attribution/license note.
+- Do not commit copyrighted assets without permission.
+
+============================================================
+15. PROJECT STRUCTURE
+============================================================
+
+Suggested structure (adapt to the existing repository and chosen TypeScript/JavaScript approach):
+
+san-construction/
+  public/
+    favicon.svg
+    images/
+    models/
+    fonts/
+    robots.txt
+  src/
+    app/
+      App.tsx
+      router.tsx
+    assets/
+      images/
+      models/
+    components/
+      layout/
+        SiteHeader.tsx
+        SiteFooter.tsx
+        MainLayout.tsx
+        MobileNavigation.tsx
+        SkipToContent.tsx
+      ui/
+        Button.tsx
+        Container.tsx
+        SectionHeading.tsx
+        Breadcrumbs.tsx
+        LoadingFallback.tsx
+      motion/
+        Reveal.tsx
+        PageTransition.tsx
+        useReducedMotionPreference.ts
+      three/
+        HeroScene.tsx
+        BuildingModel.tsx
+        SceneFallback.tsx
+      forms/
+        EnquiryForm.tsx
+        FormField.tsx
+        FormStatus.tsx
+      cards/
+        ServiceCard.tsx
+        ProjectCard.tsx
+    pages/
+      HomePage.tsx
+      AboutPage.tsx
+      ServicesPage.tsx
+      ServiceDetailPage.tsx
+      ProjectsPage.tsx
+      ProjectDetailPage.tsx
+      ProcessPage.tsx
+      ContactPage.tsx
+      NotFoundPage.tsx
+    data/
+      site.ts
+      navigation.ts
+      services.ts
+      projects.ts
+    hooks/
+    lib/
+      emailService.ts
+      validation.ts
+      seo.ts
+    styles/
+      index.css
+      tokens.css
+    types/
+    main.tsx
+  .env.example
+  .gitignore
+  README.md
+  SCOPE.txt
+  package.json
+  vite.config.ts
+
+Do not create empty abstractions just to match this tree. Keep components focused and avoid giant single-file pages. If JavaScript is selected instead of TypeScript, use `.js`/`.jsx` consistently.
+
+============================================================
+16. CODE QUALITY AND ENGINEERING RULES
+============================================================
+
+- Use reusable components for repeated layouts and UI patterns.
+- Keep content data separate from presentation.
+- Keep 3D scenes isolated so they can be lazy-loaded or replaced.
+- Use meaningful names and consistent formatting.
+- Avoid giant components and duplicated markup.
+- Avoid unnecessary global state.
+- Use semantic elements instead of clickable generic divs.
+- Do not add secrets to Git.
+- Provide `.env.example`, not a real `.env` containing credentials.
+- Avoid console errors and warnings.
+- Clean up animation and event resources.
+- Handle image/model loading failures gracefully.
+- Use an error boundary around complex 3D content if practical.
+- Do not hide failed functionality behind decorative UI.
+- Avoid `any` types if TypeScript is used, except with a documented reason.
+- Add comments for non-obvious animation logic and security decisions, not for every line.
+- Run linting, tests, and production build before considering a phase complete.
+- Keep the README aligned with the actual code and commands.
+
+============================================================
+17. TESTING PLAN
+============================================================
+
+Functional:
+- All routes load directly and through navigation.
+- Nested routes work after refresh on the production host.
+- Header and footer links work.
+- Mobile menu opens, closes, supports Escape, and navigates correctly.
+- Service and project cards link to the correct details.
+- 404 route works.
+- Form validates fields and displays every expected state.
+- Email delivery is confirmed using the configured provider.
+- No success state is shown on failed delivery.
+- All external links are correct and intentional.
+
+Responsive:
+- Test the widths listed in Section 10.
+- No horizontal scrolling.
+- No clipped text, overlapping controls, or broken grids.
+- Form and navigation remain usable on touch devices.
+
+Visual:
+- Check image cropping and loading.
+- Check text contrast over images.
+- Check animation timing and section transitions.
+- Check 3D fallback and loading state.
+- Check pages with reduced motion enabled.
+
+Accessibility:
+- Keyboard-only pass.
+- Visible focus pass.
+- Form labels and errors.
+- Screen reader spot check.
+- Contrast review.
+- Reduced-motion review.
+
+Performance:
+- Production build succeeds.
+- No unnecessary heavy assets load on every route.
+- Test a throttled mobile profile.
+- Run Lighthouse or equivalent.
+- Check console and network errors.
+
+Security/privacy:
+- No private keys in client bundle.
+- No sensitive form payloads in console logs.
+- Spam protection configured.
+- Privacy notice reflects the selected provider and actual data use.
+
+============================================================
+18. IMPLEMENTATION PHASES
+============================================================
+
+Phase 0 — Repository and discovery
+- Inspect existing repository before changing files.
+- Identify framework, package manager, current dependencies, and conventions.
+- Confirm assumptions and list unresolved owner decisions.
+- Do not overwrite existing work without checking it.
+
+Phase 1 — Foundation
+- Set up or validate React/Vite.
+- Configure styling, routes, typography, color tokens, and base layout.
+- Build header, mobile navigation, footer, and 404 page.
+- Verify production build.
+
+Phase 2 — Page structure and content
+- Implement all route templates.
+- Create centralized service/project data.
+- Use provisional content and clearly marked sample imagery.
+- Ensure all internal links work.
+
+Phase 3 — Visual design
+- Apply the luxury cinematic art direction.
+- Refine spacing, typography, image composition, responsive grids, and CTA hierarchy.
+- Check contrast and content readability.
+
+Phase 4 — Motion system
+- Add restrained component transitions.
+- Add section reveal and image transitions.
+- Add process timeline motion.
+- Add route transitions only if they do not delay navigation.
+- Implement reduced-motion behavior and cleanups.
+
+Phase 5 — 3D hero / feature
+- Implement lazy-loaded 3D scene and model.
+- Add a static fallback.
+- Add controlled camera/scroll movement.
+- Optimize model and rendering performance.
+- Test on mobile and WebGL failure conditions.
+
+Phase 6 — Enquiry delivery
+- Confirm email provider and deployment requirements.
+- Implement validation, submit lifecycle, success/error handling, and anti-spam protection.
+- Configure secrets securely.
+- Test real inbox delivery before claiming the form is complete.
+
+Phase 7 — SEO, accessibility, performance
+- Add page metadata, sharing metadata, sitemap, robots.txt, and verified structured data if applicable.
+- Audit keyboard navigation, focus, labels, contrast, and reduced motion.
+- Optimize images, bundle splitting, and 3D load behavior.
+
+Phase 8 — Quality assurance and handover
+- Run tests, lint, and production build.
+- Fix console/network errors.
+- Test direct route navigation and deployment fallback.
+- Update README with setup, environment variables, deployment, asset replacement, and email-provider setup.
+- Produce a final list of completed items, known limitations, and owner decisions still required.
+
+Do not claim a phase is complete until its acceptance criteria have been checked.
+
+============================================================
+19. ACCEPTANCE CRITERIA
+============================================================
+
+The website is accepted when all applicable items below are satisfied:
+
+Project foundation:
+[ ] App installs and starts using documented commands.
+[ ] Production build completes successfully.
+[ ] Project uses the agreed React/Vite stack.
+[ ] No unnecessary dependencies or exposed secrets.
+
+Pages and navigation:
+[ ] All required routes exist.
+[ ] All routes render meaningful content.
+[ ] Header, mobile navigation, footer, breadcrumbs, and 404 page work.
+[ ] Nested routes load directly and survive refresh on the deployment host.
+[ ] No dead internal links.
+
+Visual quality:
+[ ] Luxury cinematic style is consistent across pages.
+[ ] Layout, typography, imagery, spacing, and CTAs feel intentional.
+[ ] Placeholder projects and claims are not misrepresented as real.
+[ ] Design remains readable and usable when images or 3D are unavailable.
+
+3D and animation:
+[ ] 3D scene loads without blocking core content.
+[ ] A static fallback appears if WebGL/model loading fails.
+[ ] Scroll and entrance animations work without breaking normal scrolling.
+[ ] Reduced-motion preference is respected.
+[ ] Animations clean up correctly during navigation/unmount.
+[ ] 3D performance has been checked on mobile.
+
+Responsive:
+[ ] Tested at 320, 375, 390, 430, 768, 1024, 1280, and 1440+ px.
+[ ] No horizontal overflow at target widths.
+[ ] Touch targets and forms are usable on mobile.
+[ ] Heavy visual effects are reduced when necessary.
+
+Enquiry form:
+[ ] Required fields and validation work.
+[ ] Loading, success, and error states work.
+[ ] Duplicate submission is prevented while sending.
+[ ] Success is shown only after confirmed delivery.
+[ ] A real test email reaches the configured inbox.
+[ ] Private credentials are not exposed in client code or bundle.
+[ ] Spam protection and privacy wording are configured for production.
+
+Accessibility:
+[ ] Semantic structure and heading order are sensible.
+[ ] Keyboard navigation and visible focus work.
+[ ] Form labels and errors are accessible.
+[ ] Contrast is reviewed.
+[ ] Reduced motion works.
+[ ] Skip link is available.
+
+SEO and performance:
+[ ] Unique titles and descriptions exist for each public route.
+[ ] Favicon and social metadata are configured.
+[ ] Sitemap and robots.txt reflect the actual deployment.
+[ ] Images have appropriate sizing and alt text.
+[ ] 3D and below-the-fold assets are lazy-loaded where appropriate.
+[ ] Lighthouse or equivalent audit has been run and issues documented.
+
+Documentation:
+[ ] README explains install, development, build, and deployment.
+[ ] `.env.example` contains placeholders only.
+[ ] Email provider setup is documented.
+[ ] Asset attribution and replacement guidance is included.
+[ ] Remaining assumptions and launch blockers are listed.
+
+============================================================
+20. CLAUDE CODE WORKING INSTRUCTIONS
+============================================================
+
+Follow these instructions while implementing this scope:
+
+1. First inspect the current repository and report its existing framework, structure, and state. Do not blindly replace files.
+2. Read this scope fully before making implementation decisions.
+3. Produce a short implementation plan with the phases, files likely to change, and any blocking questions.
+4. Separate confirmed requirements from assumptions. Do not invent company facts.
+5. If a missing decision blocks a secure or correct implementation—especially email provider, recipient inbox, real contact details, or production domain—ask the owner. Continue with independent work that does not depend on that decision.
+6. Implement in small, verifiable phases. After each phase, run relevant checks and report results.
+7. Prefer a complete, cohesive experience over isolated flashy components.
+8. Keep essential content and navigation available if 3D, animation, external fonts, or images fail.
+9. Never claim email delivery, testing, accessibility, SEO, or performance work succeeded unless it was actually tested.
+10. Never put private credentials in client code or commit secrets.
+11. Do not add backend/database/authentication features unless the owner explicitly approves them.
+12. Do not leave visible dead buttons, fake form success, empty pages, or placeholder links.
+13. If a feature is not possible with the current setup, explain the limitation and propose the simplest safe alternative.
+14. Before final handover, run the available lint, tests, and production build; list any checks that could not be run.
+15. At completion, summarize:
+    - Pages and features implemented
+    - 3D/animation behavior and fallback
+    - Form provider and whether real delivery was tested
+    - Commands to run and build
+    - Environment variables needed
+    - Deployment steps
+    - Remaining placeholder content and launch blockers
+
+============================================================
+21. LAUNCH CHECKLIST
+============================================================
+
+Before the public launch:
+[ ] Replace provisional logo/brand styling if an approved identity exists.
+[ ] Confirm actual services and descriptions.
+[ ] Replace all placeholder portfolio images and project information.
+[ ] Replace draft About copy with approved company details.
+[ ] Confirm real contact information and service area.
+[ ] Configure the production email/form provider and destination inbox.
+[ ] Add and review privacy notice and any required consent text.
+[ ] Confirm image, font, model, and video licenses.
+[ ] Set production domain, canonical URL, sitemap, and robots.txt.
+[ ] Test all routes on the production host.
+[ ] Test the enquiry form using a real submission.
+[ ] Check mobile layout, reduced motion, and 3D fallback.
+[ ] Run production build and performance/accessibility audits.
+[ ] Remove development-only placeholder indicators and debug output.
+[ ] Obtain owner approval for all public company claims and content.
+
+END OF SCOPE

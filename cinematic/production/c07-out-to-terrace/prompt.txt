@@ -1,0 +1,20 @@
+CLIP c07: Bathroom, through the bedroom, out to the terrace
+Purpose: Leaves the interior and opens up to the sky: the emotional high point.
+Camera: Turn back, glide across the bedroom and out through the sliding doors
+Duration: 8 s    Aspect: 16:9 (widescreen)    Quality: 1080p (the highest available)
+
+UPLOAD AS START FRAME:  start.png   <- storyboard keyframe 07 (original/panel-07.png, not upscaled yet)
+UPLOAD AS END FRAME:    end.png     <- storyboard keyframe 08 (original/panel-08.png, not upscaled yet)
+
+--- PROMPT (paste into the prompt box) ---
+The camera turns back out of the bathroom, crosses the bedroom and passes through open sliding glass doors onto the covered terrace at sunset: a teak pergola ceiling, cushioned outdoor sofas, a wooden coffee table with a lit brass diya, potted palms, a cream parapet, and a wide view over coconut palms to a glowing orange and blue sky.
+
+Photorealistic architectural visualization film of a luxury modern Kerala-style Indian home, like a premium real-estate launch film. Real-world materials and scale, natural light, physically accurate shadows and reflections, crisp detail, cinematic colour grade, soft evening haze. One continuous, slow, perfectly smooth stabilized camera move (gimbal or drone). No cuts.
+
+The interior (the same home as the start image): cream lime-plaster walls, dark grey polished stone floors, teak and cane furniture, wooden lattice jali screens, brass dome pendant lamps, terracotta and copper pots on open wooden shelves, jute rugs, potted plants, white-framed windows with soft natural daylight and lush greenery outside.
+
+--- NEGATIVE PROMPT (paste into the negative prompt box) ---
+cartoon, CGI game graphics, low-poly, 3D toy model, clay render, illustration, painting, anime, oversaturated, plastic-looking materials, warped or bending walls, morphing architecture, melting objects, flickering lights, house design changing, people, animals, moving cars, text, captions, logos, watermark, fisheye distortion, shaky handheld camera, fast motion, cuts, scene change
+
+Save the best take as:  cinematic/clips/c07.mp4
+Then run:               node scripts/cinematic/last-frame.mjs c07

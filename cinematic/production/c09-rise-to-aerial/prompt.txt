@@ -1,0 +1,23 @@
+CLIP c09: Garden rising to the aerial view
+Purpose: Drone reveal of the whole plot: roofs, gardens, drive and road.
+Camera: Drone: vertical rise past the roofline, then tilt down to a high three-quarter top view
+Duration: 8 s    Aspect: 16:9 (widescreen)    Quality: 1080p (the highest available)
+
+UPLOAD AS START FRAME:  start.png   <- storyboard keyframe 09 (original/panel-09.png, not upscaled yet)
+UPLOAD AS END FRAME:    end.png     <- storyboard keyframe 10 (original/panel-10.png, not upscaled yet)
+
+--- PROMPT (paste into the prompt box) ---
+Drone shot: the camera rises vertically from the garden, past the eaves and above the terracotta tiled roofs, then tilts down to look over the whole plot: the hipped tile roofs and front gable, balconies, lawns, the cream compound wall, the paved driveway and the road, surrounded by dense green trees. Warm lights are just coming on.
+
+Photorealistic architectural visualization film of a luxury modern Kerala-style Indian home, like a premium real-estate launch film. Real-world materials and scale, natural light, physically accurate shadows and reflections, crisp detail, cinematic colour grade, soft evening haze. One continuous, slow, perfectly smooth stabilized camera move (gimbal or drone). No cuts.
+
+The house (identical in every shot, as in clip c01): a two-storey Kerala-style villa with warm cream plaster walls, terracotta clay-tile gable roofs, stone-clad piers and wall panels, a first-floor balcony with a black metal railing and vertical timber louvres, teak-framed windows glowing warmly, a deep entrance porch with white columns on dark granite bases, a coffered teak ceiling with downlights and a brass hanging lantern, a carved teak front door between slatted timber side panels, dark granite steps with small step lights, a cream compound wall with stone-clad gate pillars and a sliding wooden-slat gate, coconut palms and lush tropical planting.
+
+--- NEGATIVE PROMPT (paste into the negative prompt box) ---
+cartoon, CGI game graphics, low-poly, 3D toy model, clay render, illustration, painting, anime, oversaturated, plastic-looking materials, warped or bending walls, morphing architecture, melting objects, flickering lights, house design changing, people, animals, moving cars, text, captions, logos, watermark, fisheye distortion, shaky handheld camera, fast motion, cuts, scene change
+
+--- WATCH OUT ---
+Storyboard panels 9 and 10 both differ from the main house. Use both regenerated keyframes (00-keyframes/fixes/FIXES.md).
+
+Save the best take as:  cinematic/clips/c09.mp4
+Then run:               node scripts/cinematic/last-frame.mjs c09

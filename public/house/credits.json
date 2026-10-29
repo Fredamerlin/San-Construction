@@ -1,0 +1,266 @@
+[
+    {
+        "id":  "clay_roof_tiles_02",
+        "type":  "texture",
+        "name":  "Clay Roof Tiles 02",
+        "authors":  [
+                        "Amal Kumar"
+                    ],
+        "url":  "https://polyhaven.com/a/clay_roof_tiles_02",
+        "licence":  "CC0"
+    },
+    {
+        "id":  "painted_plaster_wall",
+        "type":  "texture",
+        "name":  "Painted Plaster Wall",
+        "authors":  [
+                        "Amal Kumar"
+                    ],
+        "url":  "https://polyhaven.com/a/painted_plaster_wall",
+        "licence":  "CC0"
+    },
+    {
+        "id":  "marble_01",
+        "type":  "texture",
+        "name":  "Marble 01",
+        "authors":  [
+                        "Rob Tuytel"
+                    ],
+        "url":  "https://polyhaven.com/a/marble_01",
+        "licence":  "CC0"
+    },
+    {
+        "id":  "granite_tile",
+        "type":  "texture",
+        "name":  "Granite Tile",
+        "authors":  [
+                        "Charlotte Baglioni"
+                    ],
+        "url":  "https://polyhaven.com/a/granite_tile",
+        "licence":  "CC0"
+    },
+    {
+        "id":  "leafy_grass",
+        "type":  "texture",
+        "name":  "Leafy Grass",
+        "authors":  [
+                        "Charlotte Baglioni"
+                    ],
+        "url":  "https://polyhaven.com/a/leafy_grass",
+        "licence":  "CC0"
+    },
+    {
+        "id":  "asphalt_02",
+        "type":  "texture",
+        "name":  "Asphalt 02",
+        "authors":  [
+                        "Rob Tuytel"
+                    ],
+        "url":  "https://polyhaven.com/a/asphalt_02",
+        "licence":  "CC0"
+    },
+    {
+        "id":  "dark_wood",
+        "type":  "texture",
+        "name":  "Dark Wood",
+        "authors":  [
+                        "Dario Barresi",
+                        "Dimitrios Savva",
+                        "Rico Cilliers"
+                    ],
+        "url":  "https://polyhaven.com/a/dark_wood",
+        "licence":  "CC0"
+    },
+    {
+        "id":  "oak_wood_planks",
+        "type":  "texture",
+        "name":  "Oak Wood Planks",
+        "authors":  [
+                        "Dimitrios Savva"
+                    ],
+        "url":  "https://polyhaven.com/a/oak_wood_planks",
+        "licence":  "CC0"
+    },
+    {
+        "id":  "terracotta_floor_tiles",
+        "type":  "texture",
+        "name":  "Terracotta Floor Tiles",
+        "authors":  [
+                        "Dimitrios Savva"
+                    ],
+        "url":  "https://polyhaven.com/a/terracotta_floor_tiles",
+        "licence":  "CC0"
+    },
+    {
+        "id":  "long_white_tiles",
+        "type":  "texture",
+        "name":  "Long White Tiles",
+        "authors":  [
+                        "Jenelle van Heerden",
+                        "Sergej Majboroda"
+                    ],
+        "url":  "https://polyhaven.com/a/long_white_tiles",
+        "licence":  "CC0"
+    },
+    {
+        "id":  "wood_plank_wall",
+        "type":  "texture",
+        "name":  "Wood Plank Wall",
+        "authors":  [
+                        "Dimitrios Savva"
+                    ],
+        "url":  "https://polyhaven.com/a/wood_plank_wall",
+        "licence":  "CC0"
+    },
+    {
+        "id":  "industrial_sunset_02_puresky",
+        "type":  "hdri",
+        "name":  "Industrial Sunset 02 (Pure Sky)",
+        "authors":  [
+                        "Jarod Guest",
+                        "Sergej Majboroda"
+                    ],
+        "url":  "https://polyhaven.com/a/industrial_sunset_02_puresky",
+        "licence":  "CC0"
+    },
+    {
+        "id":  "brass_diya_lantern",
+        "type":  "model",
+        "name":  "Brass Diya Lantern",
+        "authors":  [
+                        "Bhargav Kubal"
+                    ],
+        "url":  "https://polyhaven.com/a/brass_diya_lantern",
+        "licence":  "CC0"
+    },
+    {
+        "id":  "potted_plant_04",
+        "type":  "model",
+        "name":  "Potted Plant 04",
+        "authors":  [
+                        "James Ray Cock"
+                    ],
+        "url":  "https://polyhaven.com/a/potted_plant_04",
+        "licence":  "CC0"
+    },
+    {
+        "id":  "planter_pot_clay",
+        "type":  "model",
+        "name":  "Planter Pot Clay",
+        "authors":  [
+                        "Amal Kumar"
+                    ],
+        "url":  "https://polyhaven.com/a/planter_pot_clay",
+        "licence":  "CC0"
+    },
+    {
+        "id":  "potted_plant_02",
+        "type":  "model",
+        "name":  "Potted Plant 02",
+        "authors":  [
+                        "Rico Cilliers"
+                    ],
+        "url":  "https://polyhaven.com/a/potted_plant_02",
+        "licence":  "CC0"
+    },
+    {
+        "id":  "ceiling_fan",
+        "type":  "model",
+        "name":  "Ceiling Fan",
+        "authors":  [
+                        "Ulan Cabanilla"
+                    ],
+        "url":  "https://polyhaven.com/a/ceiling_fan",
+        "licence":  "CC0"
+    },
+    {
+        "id":  "modern_arm_chair_01",
+        "type":  "model",
+        "name":  "Modern Arm Chair 01",
+        "authors":  [
+                        "Vibrant Nordic"
+                    ],
+        "url":  "https://polyhaven.com/a/modern_arm_chair_01",
+        "licence":  "CC0"
+    },
+    {
+        "id":  "mid_century_lounge_chair",
+        "type":  "model",
+        "name":  "Mid Century Lounge Chair",
+        "authors":  [
+                        "Kuutti Siitonen"
+                    ],
+        "url":  "https://polyhaven.com/a/mid_century_lounge_chair",
+        "licence":  "CC0"
+    },
+    {
+        "id":  "modern_ceiling_lamp_01",
+        "type":  "model",
+        "name":  "Modern Ceiling Lamp 01",
+        "authors":  [
+                        "James Ray Cock"
+                    ],
+        "url":  "https://polyhaven.com/a/modern_ceiling_lamp_01",
+        "licence":  "CC0"
+    },
+    {
+        "id":  "side_table_01",
+        "type":  "model",
+        "name":  "Side Table 01",
+        "authors":  [
+                        "James Ray Cock"
+                    ],
+        "url":  "https://polyhaven.com/a/side_table_01",
+        "licence":  "CC0"
+    },
+    {
+        "id":  "brass_vase_01",
+        "type":  "model",
+        "name":  "Brass Vase 01",
+        "authors":  [
+                        "Rico Cilliers"
+                    ],
+        "url":  "https://polyhaven.com/a/brass_vase_01",
+        "licence":  "CC0"
+    },
+    {
+        "id":  "carved_wooden_elephant",
+        "type":  "model",
+        "name":  "Carved Wooden Elephant",
+        "authors":  [
+                        "Greg Zaal"
+                    ],
+        "url":  "https://polyhaven.com/a/carved_wooden_elephant",
+        "licence":  "CC0"
+    },
+    {
+        "id":  "brass_pot_01",
+        "type":  "model",
+        "name":  "Brass Pot 01",
+        "authors":  [
+                        "Rico Cilliers"
+                    ],
+        "url":  "https://polyhaven.com/a/brass_pot_01",
+        "licence":  "CC0"
+    },
+    {
+        "id":  "wooden_bowl_01",
+        "type":  "model",
+        "name":  "Wooden Bowl 01",
+        "authors":  [
+                        "Oliver Harries"
+                    ],
+        "url":  "https://polyhaven.com/a/wooden_bowl_01",
+        "licence":  "CC0"
+    },
+    {
+        "id":  "throw_pillows_01",
+        "type":  "model",
+        "name":  "Throw Pillows 01",
+        "authors":  [
+                        "Serhii Khromov"
+                    ],
+        "url":  "https://polyhaven.com/a/throw_pillows_01",
+        "licence":  "CC0"
+    }
+]

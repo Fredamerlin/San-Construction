@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Process | SAN Construction - Turnkey Architectural & Construction Workflow</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0F1115',
+                            card: '#1A1A1E',
+                            concrete: '#2A2E37',
+                            border: '#38383E',
+                            lightBg: '#F7F5F0',
+                            ivory: '#F0EDE6',
+                            gold: '#C5A059',
+                            goldHover: '#D4AF37',
+                            goldLight: 'rgba(197, 160, 89, 0.12)',
+                            textMuted: '#A0A0A8'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0F1115;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #38383E;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C5A059;
+        }
+        
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF0D0 0%, #C5A059 50%, #E2C481 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .blueprint-grid {
+            background-size: 30px 30px;
+            background-image: 
+                linear-gradient(to right, rgba(197, 160, 89, 0.08) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(197, 160, 89, 0.08) 1px, transparent 1px);
+        }
+
+        .glass-panel {
+            background: rgba(26, 26, 30, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-gray-200 font-sans antialiased selection:bg-brand-gold selection:text-black">
+
+    <!-- Scroll Progress Bar -->
+    <div id="scrollProgress" class="fixed top-0 left-0 h-1 bg-brand-gold z-50 transition-all duration-150 w-0"></div>
+
+    <!-- Header / Navbar -->
+    <header id="mainHeader" class="fixed top-0 left-0 w-full z-40 transition-all duration-300 py-5 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto glass-panel rounded-2xl px-6 py-3 flex items-center justify-between transition-all duration-300">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-lg bg-brand-gold/10 border border-brand-gold/40 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-black transition-all duration-300">
+                    <span class="font-serif text-2xl font-bold">S</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-xl tracking-wider font-bold text-white group-hover:text-brand-gold transition-colors">SAN</span>
+                    <span class="text-[9px] tracking-[0.25em] text-brand-gold uppercase -mt-1 font-semibold">CONSTRUCTION</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="index.html" class="hover:text-brand-gold transition-colors">Home</a>
+                <a href="about.html" class="hover:text-brand-gold transition-colors">About Us</a>
+                <a href="services.html" class="hover:text-brand-gold transition-colors">Services</a>
+                <a href="projects.html" class="hover:text-brand-gold transition-colors">Projects</a>
+                <a href="#process" class="text-brand-gold font-semibold">Our Process</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="tel:+919876543210" class="text-xs font-semibold tracking-wider uppercase text-gray-400 hover:text-white flex items-center gap-2">
+                    <i data-lucide="phone" class="w-3.5 h-3.5 text-brand-gold"></i>
+                    <span>+91 98765 43210</span>
+                </a>
+                <button onclick="openModal('quoteModal')" class="relative group overflow-hidden rounded-xl px-5 py-2.5 bg-brand-gold text-black font-semibold text-xs tracking-wider uppercase transition-all duration-300 hover:shadow-[0_0_20px_rgba(197,160,89,0.4)]">
+                    <span class="relative z-10 flex items-center gap-2">
+                        <span>Get a Quote</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </span>
+                    <div class="absolute inset-0 bg-white/30 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobileMenuBtn" class="lg:hidden text-white p-2 focus:outline-none" aria-label="Toggle Navigation">
+                <i data-lucide="menu" id="menuIcon" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileDrawer" class="fixed inset-0 bg-brand-dark/95 backdrop-blur-xl z-30 transform translate-x-full transition-transform duration-500 lg:hidden flex flex-col justify-between p-8 pt-28">
+        <div class="flex flex-col gap-6 text-xl font-serif">
+            <a href="index.html" class="mobile-nav-link text-gray-300 hover:text-brand-gold border-b border-white/5 pb-3">Home</a>
+            <a href="about.html" class="mobile-nav-link text-gray-300 hover:text-brand-gold border-b border-white/5 pb-3">About Us</a>
+            <a href="services.html" class="mobile-nav-link text-gray-300 hover:text-brand-gold border-b border-white/5 pb-3">Services</a>
+            <a href="projects.html" class="mobile-nav-link text-gray-300 hover:text-brand-gold border-b border-white/5 pb-3">Projects</a>
+            <a href="#process" class="mobile-nav-link text-brand-gold border-b border-white/5 pb-3">Our Process</a>
+        </div>
+        <div class="flex flex-col gap-4">
+            <button onclick="openModal('quoteModal')" class="w-full py-4 rounded-xl bg-brand-gold text-black font-semibold text-center uppercase tracking-wider text-xs">
+                Request Project Consultation
+            </button>
+        </div>
+    </div>
+
+    <!-- SECTION 1: HERO (FROM VISION TO REALITY) -->
+    <section class="relative min-h-[85vh] flex items-center justify-center pt-28 pb-16 px-4 md:px-8 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000&auto=format&fit=crop" 
+                 alt="Indian Villa Construction Site Transitioning into Finished Architecture" 
+                 class="w-full h-full object-cover object-center scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/75 to-brand-dark/45"></div>
+            <div class="blueprint-grid absolute inset-0 opacity-20"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto w-full pt-12">
+            <!-- Breadcrumbs -->
+            <nav class="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">
+                <a href="index.html" class="hover:text-brand-gold transition-colors">Home</a>
+                <span>/</span>
+                <span class="text-brand-gold">Our Process</span>
+            </nav>
+
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-gold/15 border border-brand-gold/30 text-brand-gold text-xs font-semibold tracking-wider uppercase mb-6 backdrop-blur-md">
+                    <span class="w-2 h-2 rounded-full bg-brand-gold animate-ping"></span>
+                    STRUCTURED TURNKEY WORKFLOW
+                </div>
+
+                <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl font-semibold text-white leading-[1.1] mb-6">
+                    From Vision To <br>
+                    <span class="gold-gradient-text italic font-normal">Architectural Reality</span>
+                </h1>
+
+                <p class="text-base md:text-xl text-gray-300 font-light leading-relaxed mb-10 max-w-2xl">
+                    A clear, structured approach to turning your vision into a space built to last. Combining traditional Indian spatial wisdom with modern civil engineering precision.
+                </p>
+
+                <!-- Scroll Down Indicator -->
+                <a href="#overview" class="inline-flex items-center gap-3 text-xs font-mono uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-colors group">
+                    <span class="w-10 h-10 rounded-full border border-white/20 group-hover:border-brand-gold flex items-center justify-center bg-black/40 backdrop-blur-md">
+                        <i data-lucide="arrow-down" class="w-4 h-4 text-brand-gold animate-bounce"></i>
+                    </span>
+                    <span>Explore 6 Construction Milestones</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: TIMELINE OVERVIEW -->
+    <section id="overview" class="py-20 px-4 md:px-8 bg-brand-dark relative border-t border-brand-border">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase mb-2 block">PROJECT JOURNEY</span>
+                <h2 class="font-serif text-3xl md:text-5xl text-white font-semibold mb-4">A Thoughtful Process. Exceptional Results.</h2>
+                <p class="text-gray-400 text-sm font-light">
+                    Click through the 6 stages below to explore how SAN Construction manages quality, timelines, and budgets from start to finish.
+                </p>
+            </div>
+
+            <!-- Interactive Timeline Controls (Horizontal Desktop / Stacked Mobile) -->
+            <div class="grid grid-cols-2 md:grid-cols-6 gap-3 mb-12">
+                <button onclick="scrollToStage('stage-1', this)" class="stage-nav-btn active flex flex-col items-center p-4 rounded-2xl bg-brand-gold text-black border border-brand-gold transition-all">
+                    <span class="font-mono text-xs font-bold mb-1">01</span>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-center">Consultation</span>
+                </button>
+                <button onclick="scrollToStage('stage-2', this)" class="stage-nav-btn flex flex-col items-center p-4 rounded-2xl bg-brand-card text-gray-300 border border-white/10 hover:border-brand-gold transition-all">
+                    <span class="font-mono text-xs text-brand-gold mb-1">02</span>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-center">Design & Plan</span>
+                </button>
+                <button onclick="scrollToStage('stage-3', this)" class="stage-nav-btn flex flex-col items-center p-4 rounded-2xl bg-brand-card text-gray-300 border border-white/10 hover:border-brand-gold transition-all">
+                    <span class="font-mono text-xs text-brand-gold mb-1">03</span>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-center">Budgeting</span>
+                </button>
+                <button onclick="scrollToStage('stage-4', this)" class="stage-nav-btn flex flex-col items-center p-4 rounded-2xl bg-brand-card text-gray-300 border border-white/10 hover:border-brand-gold transition-all">
+                    <span class="font-mono text-xs text-brand-gold mb-1">04</span>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-center">Site Execution</span>
+                </button>
+                <button onclick="scrollToStage('stage-5', this)" class="stage-nav-btn flex flex-col items-center p-4 rounded-2xl bg-brand-card text-gray-300 border border-white/10 hover:border-brand-gold transition-all">
+                    <span class="font-mono text-xs text-brand-gold mb-1">05</span>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-center">Quality Audits</span>
+                </button>
+                <button onclick="scrollToStage('stage-6', this)" class="stage-nav-btn flex flex-col items-center p-4 rounded-2xl bg-brand-card text-gray-300 border border-white/10 hover:border-brand-gold transition-all">
+                    <span class="font-mono text-xs text-brand-gold mb-1">06</span>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-center">Handover</span>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 3: SIX VISUALLY DISTINCT CONSTRUCTION STAGES -->
+    <section id="process" class="py-12 px-4 md:px-8 bg-brand-dark relative">
+        <div class="max-w-7xl mx-auto space-y-24">
+            
+            <!-- STAGE 1: CONSULTATION & UNDERSTANDING (Editorial Split) -->
+            <div id="stage-1" class="scroll-mt-32 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-brand-card p-8 md:p-12 rounded-3xl border border-brand-border">
+                <div class="lg:col-span-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-10 h-10 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center font-mono font-bold text-brand-gold">01</span>
+                        <span class="text-xs font-mono text-brand-gold uppercase tracking-wider">STAGE ONE • DISCOVERY</span>
+                    </div>
+                    <h3 class="font-serif text-3xl md:text-4xl text-white font-semibold mb-4">Consultation & Understanding</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed font-light mb-6">
+                        Every masterpiece starts with a conversation. We discuss your family’s spatial requirements, budget boundaries, site topography, and specific Vaastu Shastra preferences.
+                    </p>
+
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-dark border border-white/5">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-brand-gold mt-0.5 flex-shrink-0"></i>
+                            <div>
+                                <h4 class="text-xs font-semibold text-white">Site & Soil Condition Audit</h4>
+                                <p class="text-[11px] text-gray-400">Evaluating plot orientation, soil bearing capacity, and local municipal setbacks.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-dark border border-white/5">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-brand-gold mt-0.5 flex-shrink-0"></i>
+                            <div>
+                                <h4 class="text-xs font-semibold text-white">Vaastu & Lifestyle Mapping</h4>
+                                <p class="text-[11px] text-gray-400">Aligning main entry directions, kitchen positioning (Agni corner), and bedroom layouts.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="openModal('quoteModal')" class="px-6 py-3 rounded-xl bg-brand-gold text-black font-semibold text-xs tracking-wider uppercase hover:bg-brand-goldHover transition-colors flex items-center gap-2">
+                        <span>Book Intake Consultation</span>
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <div class="lg:col-span-6 relative rounded-2xl overflow-hidden border border-white/10 h-[380px]">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop" 
+                         alt="Architect reviewing site plans with client" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 glass-panel px-4 py-2 rounded-xl text-xs text-white">
+                        <span class="font-mono text-brand-gold font-bold">100% Transparent</span> Briefing Session
+                    </div>
+                </div>
+            </div>
+
+            <!-- STAGE 2: PLANNING & DESIGN (Blueprint & Scale Model Theme) -->
+            <div id="stage-2" class="scroll-mt-32 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-brand-concrete/30 p-8 md:p-12 rounded-3xl border border-brand-border relative">
+                <div class="blueprint-grid absolute inset-0 opacity-25"></div>
+
+                <div class="lg:col-span-6 lg:order-2 relative z-10">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-10 h-10 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center font-mono font-bold text-brand-gold">02</span>
+                        <span class="text-xs font-mono text-brand-gold uppercase tracking-wider">STAGE TWO • ARCHITECTURE & BIM</span>
+                    </div>
+                    <h3 class="font-serif text-3xl md:text-4xl text-white font-semibold mb-4">Planning & 3D Architectural Design</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed font-light mb-6">
+                        Our architects craft 2D floorplans, 3D BIM structural visualizations, material samples, and lighting concepts, giving you a crystal-clear walkthrough before ground break.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="p-4 rounded-xl bg-brand-card border border-white/5">
+                            <i data-lucide="layers" class="w-5 h-5 text-brand-gold mb-2"></i>
+                            <h4 class="text-xs font-semibold text-white mb-1">BIM 3D Walkthrough</h4>
+                            <p class="text-[11px] text-gray-400">Virtual 3D navigation showing room volumes, shadow analysis & louver details.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-brand-card border border-white/5">
+                            <i data-lucide="file-check-2" class="w-5 h-5 text-brand-gold mb-2"></i>
+                            <h4 class="text-xs font-semibold text-white mb-1">Municipal Approvals</h4>
+                            <p class="text-[11px] text-gray-400">Complete preparation & submission for city corporation building sanctions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 lg:order-1 relative z-10 rounded-2xl overflow-hidden border border-white/10 h-[380px]">
+                    <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?q=80&w=1000&auto=format&fit=crop" 
+                         alt="Architectural scale model and blueprints" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent"></div>
+                    <div class="absolute top-4 left-4 glass-panel px-3 py-1.5 rounded-lg text-[10px] font-mono text-brand-gold uppercase">
+                        CAD & Structural Engineering
+                    </div>
+                </div>
+            </div>
+
+            <!-- STAGE 3: BUDGETING & SCHEDULING (Milestone & Material Grade Sheet) -->
+            <div id="stage-3" class="scroll-mt-32 bg-brand-card p-8 md:p-12 rounded-3xl border border-brand-border">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="w-10 h-10 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center font-mono font-bold text-brand-gold">03</span>
+                    <span class="text-xs font-mono text-brand-gold uppercase tracking-wider">STAGE THREE • TRANSPARENT FINANCE</span>
+                </div>
+                <h3 class="font-serif text-3xl md:text-4xl text-white font-semibold mb-4">Budgeting & Schedule Commitment</h3>
+                <p class="text-gray-300 text-sm leading-relaxed font-light mb-8 max-w-2xl">
+                    We lock down itemized Bill of Quantities (BOQ) with fixed material specifications and milestone timelines. No unexpected cost inflations mid-project.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="p-6 rounded-2xl bg-brand-dark border border-brand-border">
+                        <span class="text-xs font-mono text-brand-gold uppercase block mb-2">SPECIFICATION LEVEL 01</span>
+                        <h4 class="font-serif text-xl text-white font-semibold mb-2">Standard Turnkey Tier</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">High-grade TMT steel, Porotherm masonry, double-charge vitrified tiles, standard CP fittings.</p>
+                        <span class="text-xs font-mono text-white">Fixed BOQ Estimate</span>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-brand-dark border border-brand-gold/50 relative">
+                        <span class="absolute top-4 right-4 px-2.5 py-0.5 rounded-full bg-brand-gold text-black text-[9px] uppercase font-bold">MOST POPULAR</span>
+                        <span class="text-xs font-mono text-brand-gold uppercase block mb-2">SPECIFICATION LEVEL 02</span>
+                        <h4 class="font-serif text-xl text-white font-semibold mb-2">Luxury Villa Tier</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">Teak entrances, Kota stone plinths, Kohler fittings, double glazed louver balconies.</p>
+                        <span class="text-xs font-mono text-brand-gold font-bold">Fixed BOQ Estimate</span>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-brand-dark border border-brand-border">
+                        <span class="text-xs font-mono text-brand-gold uppercase block mb-2">SPECIFICATION LEVEL 03</span>
+                        <h4 class="font-serif text-xl text-white font-semibold mb-2">Signature Heritage Tier</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">Italian marble, handcrafted brass jaalis, home automation, infinity lap pools.</p>
+                        <span class="text-xs font-mono text-white">Custom Procurement</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STAGE 4: SITE PREPARATION & CONSTRUCTION (Civil Site Showcase Grid) -->
+            <div id="stage-4" class="scroll-mt-32 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-brand-concrete/30 p-8 md:p-12 rounded-3xl border border-brand-border">
+                <div class="lg:col-span-6">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-10 h-10 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center font-mono font-bold text-brand-gold">04</span>
+                        <span class="text-xs font-mono text-brand-gold uppercase tracking-wider">STAGE FOUR • CIVIL EXECUTION</span>
+                    </div>
+                    <h3 class="font-serif text-3xl md:text-4xl text-white font-semibold mb-4">Site Preparation & Civil Construction</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed font-light mb-6">
+                        From earth excavation and raft foundation casting to column shuttering and brick masonry — executed under the constant supervision of resident civil engineers.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="p-3.5 rounded-xl bg-brand-dark border border-white/5">
+                            <span class="text-xs font-semibold text-white block mb-1">Raft & Pile Foundations</span>
+                            <span class="text-[11px] text-gray-400">Soil load-tested structural depth.</span>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-brand-dark border border-white/5">
+                            <span class="text-xs font-semibold text-white block mb-1">RCC Slab Casting</span>
+                            <span class="text-[11px] text-gray-400">Ready-mix concrete with slump testing.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?q=80&w=600&auto=format&fit=crop" alt="Construction site structural steel" class="rounded-2xl h-48 w-full object-cover border border-white/10">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=600&auto=format&fit=crop" alt="Engineers inspecting concrete pouring" class="rounded-2xl h-48 w-full object-cover border border-white/10">
+                </div>
+            </div>
+
+            <!-- STAGE 5: QUALITY CHECKS & PROGRESS UPDATES (Checklist Matrix) -->
+            <div id="stage-5" class="scroll-mt-32 bg-brand-card p-8 md:p-12 rounded-3xl border border-brand-border">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="w-10 h-10 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center font-mono font-bold text-brand-gold">05</span>
+                    <span class="text-xs font-mono text-brand-gold uppercase tracking-wider">STAGE FIVE • QUALITY ASSURANCE</span>
+                </div>
+                <h3 class="font-serif text-3xl md:text-4xl text-white font-semibold mb-4">Multi-Tier Quality Checks & Weekly Reports</h3>
+                <p class="text-gray-300 text-sm leading-relaxed font-light mb-8 max-w-2xl">
+                    Over 50+ quality checkpoints are audited at each construction phase. Clients receive detailed progress reports with high-res photos and video logs.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                    <div class="p-4 rounded-xl bg-brand-dark border border-white/5 flex items-center gap-3">
+                        <i data-lucide="shield-check" class="w-5 h-5 text-brand-gold flex-shrink-0"></i>
+                        <span class="text-gray-300">Steel Tensile & Rebar Spacing Audits</span>
+                    </div>
+                    <div class="p-4 rounded-xl bg-brand-dark border border-white/5 flex items-center gap-3">
+                        <i data-lucide="shield-check" class="w-5 h-5 text-brand-gold flex-shrink-0"></i>
+                        <span class="text-gray-300">Concrete Cube Compressive Strength Testing</span>
+                    </div>
+                    <div class="p-4 rounded-xl bg-brand-dark border border-white/5 flex items-center gap-3">
+                        <i data-lucide="shield-check" class="w-5 h-5 text-brand-gold flex-shrink-0"></i>
+                        <span class="text-gray-300">Terrace & Bathroom Water-Curing Checks</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STAGE 6: FINAL INSPECTION & HANDOVER (Full-Width Finished Architecture Showcase) -->
+            <div id="stage-6" class="scroll-mt-32 relative rounded-3xl overflow-hidden border border-brand-border bg-brand-card p-8 md:p-12">
+                <div class="relative z-10 max-w-2xl">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-10 h-10 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center font-mono font-bold text-brand-gold">06</span>
+                        <span class="text-xs font-mono text-brand-gold uppercase tracking-wider">STAGE SIX • HANDOVER & WARRANTY</span>
+                    </div>
+                    <h3 class="font-serif text-3xl md:text-4xl text-white font-semibold mb-4">Final Inspection & Key Handover</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed font-light mb-6">
+                        Snagging list clearance, deep chemical cleaning, keys handover ceremony, and delivery of structural warranty documentation along with as-built drawing sets.
+                    </p>
+
+                    <div class="flex flex-wrap items-center gap-6 text-xs text-gray-400 border-t border-white/10 pt-6">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="award" class="w-4 h-4 text-brand-gold"></i>
+                            <span>10-Year Structural Guarantee</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="file-check" class="w-4 h-4 text-brand-gold"></i>
+                            <span>As-Built Blueprint Folder</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 4: QUALITY AT EVERY STAGE -->
+    <section class="py-24 px-4 md:px-8 bg-brand-card relative border-t border-brand-border">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase mb-2 block">CRAFTSMANSHIP GUARANTEE</span>
+                <h2 class="font-serif text-3xl md:text-5xl text-white font-semibold mb-4">Quality At Every Stage</h2>
+                <p class="text-gray-400 text-sm font-light">
+                    Uncompromising execution standards verified by senior civil engineers at every single cubic meter of concrete.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-3xl bg-brand-dark border border-brand-border">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold mb-6">
+                        <i data-lucide="compass" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-white font-semibold mb-3">Planning With Care</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Thorough pre-construction planning ensures all structural calculations, material specifications, and municipal clearances are aligned before work begins.
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-brand-dark border border-brand-border">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold mb-6">
+                        <i data-lucide="ruler" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-white font-semibold mb-3">Attention To Detail</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Precision brick masonry alignment, exact tile groove sizing, and seamless teak joinery executed by master craftsmen.
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-brand-dark border border-brand-border">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold mb-6">
+                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-white font-semibold mb-3">Multi-Tier Quality Audits</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Independent quality controllers inspect structural rebar tie spacing, waterproofing membrane seals, and electrical load capacity.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: BUILT WITH TRANSPARENCY -->
+    <section class="py-24 px-4 md:px-8 bg-brand-dark relative border-t border-brand-border">
+        <div class="max-w-5xl mx-auto glass-panel p-8 md:p-12 rounded-3xl border border-brand-gold/30 relative overflow-hidden">
+            <div class="blueprint-grid absolute inset-0 opacity-20"></div>
+
+            <div class="relative z-10 text-center max-w-2xl mx-auto mb-10">
+                <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase mb-2 block">CLIENT GOVERNANCE</span>
+                <h2 class="font-serif text-3xl md:text-4xl text-white font-semibold mb-3">Built With Transparency</h2>
+                <p class="text-gray-400 text-xs md:text-sm">How we keep you fully informed about project progress, budget milestones, and material specifications.</p>
+            </div>
+
+            <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-5 rounded-2xl bg-brand-card border border-white/5">
+                    <i data-lucide="file-text" class="w-6 h-6 text-brand-gold mb-3"></i>
+                    <h4 class="text-sm font-semibold text-white mb-1">Fixed BOQ Quotations</h4>
+                    <p class="text-xs text-gray-400">Detailed itemized line-item costs locked in before construction start.</p>
+                </div>
+                <div class="p-5 rounded-2xl bg-brand-card border border-white/5">
+                    <i data-lucide="calendar" class="w-6 h-6 text-brand-gold mb-3"></i>
+                    <h4 class="text-sm font-semibold text-white mb-1">Milestone Progress Logs</h4>
+                    <p class="text-xs text-gray-400">Structured progress updates sent at every completed structural phase.</p>
+                </div>
+                <div class="p-5 rounded-2xl bg-brand-card border border-white/5">
+                    <i data-lucide="check-square" class="w-6 h-6 text-brand-gold mb-3"></i>
+                    <h4 class="text-sm font-semibold text-white mb-1">Batch Material Certificates</h4>
+                    <p class="text-xs text-gray-400">Test batch certificates provided for steel, cement, and electrical wiring.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: FINAL CALL TO ACTION -->
+    <section id="contact" class="py-24 px-4 md:px-8 bg-gradient-to-b from-brand-dark via-brand-card to-black relative overflow-hidden border-t border-brand-border">
+        <div class="blueprint-grid absolute inset-0 opacity-20"></div>
+
+        <div class="max-w-4xl mx-auto relative z-10 text-center">
+            <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase mb-3 block">GET STARTED TODAY</span>
+            <h2 class="font-serif text-4xl md:text-6xl text-white font-semibold mb-6">
+                Ready to Build With <span class="gold-gradient-text italic font-normal">Confidence</span>?
+            </h2>
+            <p class="text-gray-300 text-sm md:text-base max-w-2xl mx-auto font-light mb-10">
+                Let's discuss your project and plan the next step together with our senior civil engineering team.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-16">
+                <button onclick="openModal('quoteModal')" class="px-8 py-4 rounded-xl bg-brand-gold text-black font-semibold text-xs tracking-widest uppercase hover:bg-brand-goldHover transition-all flex items-center gap-3 shadow-[0_10px_30px_rgba(197,160,89,0.3)]">
+                    <span>Start Your Project</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+                <a href="projects.html" class="px-8 py-4 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-xs tracking-widest uppercase border border-white/20 backdrop-blur-md transition-all flex items-center gap-3">
+                    <i data-lucide="building" class="w-4 h-4 text-brand-gold"></i>
+                    <span>Explore Our Projects</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-12 px-4 md:px-8 text-gray-500 text-xs border-t border-brand-border">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-brand-gold/10 border border-brand-gold/40 flex items-center justify-center text-brand-gold font-serif font-bold">
+                    S
+                </div>
+                <span class="text-gray-300 font-serif tracking-wider">SAN CONSTRUCTION PVT. LTD.</span>
+            </div>
+
+            <div class="flex gap-6">
+                <a href="index.html" class="hover:text-brand-gold transition-colors">Home Page</a>
+                <a href="about.html" class="hover:text-brand-gold transition-colors">About Us</a>
+                <a href="services.html" class="hover:text-brand-gold transition-colors">Services</a>
+                <a href="projects.html" class="hover:text-brand-gold transition-colors">Projects</a>
+                <a href="#" class="hover:text-brand-gold transition-colors">ISO 9001:2015 Certified</a>
+            </div>
+
+            <p>© 2026 SAN Construction. All Rights Reserved. Turnkey Architectural & Civil Engineering.</p>
+        </div>
+    </footer>
+
+    <!-- CONSULTATION MODAL -->
+    <div id="quoteModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-brand-card border border-brand-border rounded-3xl p-6 md:p-8 max-w-lg w-full relative">
+            <button onclick="closeModal('quoteModal')" class="absolute top-6 right-6 text-gray-400 hover:text-white">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase mb-1 block">Process Consultation</span>
+            <h3 class="font-serif text-2xl text-white font-semibold mb-2">Schedule Initial Intake Meeting</h3>
+            <p class="text-xs text-gray-400 mb-6">Fill in your plot details to discuss your project requirements with an architect.</p>
+
+            <form onsubmit="handleFormSubmit(event)" class="flex flex-col gap-4">
+                <div>
+                    <label class="text-[11px] font-semibold text-gray-300 uppercase block mb-1">Full Name</label>
+                    <input type="text" required placeholder="e.g. Vikramaditya Sharma" class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-2.5 text-sm text-white focus:border-brand-gold focus:outline-none">
+                </div>
+                <div>
+                    <label class="text-[11px] font-semibold text-gray-300 uppercase block mb-1">Phone Number</label>
+                    <input type="tel" required placeholder="+91 98765 43210" class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-2.5 text-sm text-white focus:border-brand-gold focus:outline-none">
+                </div>
+                <div>
+                    <label class="text-[11px] font-semibold text-gray-300 uppercase block mb-1">Plot Location & City</label>
+                    <input type="text" required placeholder="e.g. Jubilee Hills, Hyderabad" class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-2.5 text-sm text-white focus:border-brand-gold focus:outline-none">
+                </div>
+                <div>
+                    <label class="text-[11px] font-semibold text-gray-300 uppercase block mb-1">Approx Built-Up Area (Sq. Ft)</label>
+                    <input type="number" placeholder="e.g. 4000" class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-2.5 text-sm text-white focus:border-brand-gold focus:outline-none">
+                </div>
+
+                <button type="submit" class="w-full py-3.5 rounded-xl bg-brand-gold text-black font-semibold text-xs tracking-widest uppercase hover:bg-brand-goldHover transition-colors mt-2">
+                    Submit Intake Inquiry
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT FOR INTERACTION -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('scrollProgress').style.width = scrolled + '%';
+
+            const header = document.getElementById('mainHeader');
+            if (winScroll > 50) {
+                header.classList.add('py-3');
+                header.classList.remove('py-5');
+            } else {
+                header.classList.add('py-5');
+                header.classList.remove('py-3');
+            }
+        });
+
+        // Mobile Menu Drawer Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileDrawer = document.getElementById('mobileDrawer');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileDrawer.classList.toggle('translate-x-full');
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileDrawer.classList.add('translate-x-full');
+            });
+        });
+
+        // Smooth Scroll To Stage & Active State Toggle
+        function scrollToStage(stageId, btn) {
+            const target = document.getElementById(stageId);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            document.querySelectorAll('.stage-nav-btn').forEach(b => {
+                b.classList.remove('bg-brand-gold', 'text-black');
+                b.classList.add('bg-brand-card', 'text-gray-300');
+            });
+
+            btn.classList.add('bg-brand-gold', 'text-black');
+            btn.classList.remove('bg-brand-card', 'text-gray-300');
+        }
+
+        // Modal Controls
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            alert('Thank you for submitting your intake enquiry. Our senior civil engineering team will reach out within 24 hours.');
+            closeModal('quoteModal');
+        }
+    </script>
+</body>
+</html>

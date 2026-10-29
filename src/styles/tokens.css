@@ -1,0 +1,73 @@
+/*
+ * SAN Construction design tokens (provisional, not a final brand guide).
+ * Contrast notes on charcoal #111111:
+ *   bone #F5F2EC ≈ 16.8:1, stone #B8B2A8 ≈ 9:1, bronze #B8945B ≈ 6.7:1 (OK for text),
+ *   concrete-500 #6E6B66 ≈ 3.6:1 → borders and large text only.
+ * Bronze on bone is ≈ 2.9:1: never use bronze text on light backgrounds.
+ */
+@theme {
+  --color-night: #080808;
+  --color-charcoal: #111111;
+  --color-graphite: #181716;
+  --color-concrete-800: #2a2927;
+  --color-concrete-600: #45433f;
+  --color-concrete-500: #6e6b66;
+  --color-stone: #b8b2a8;
+  --color-bone: #f5f2ec;
+  --color-bronze: #b8945b;
+  --color-bronze-light: #cfae7a;
+  --color-error: #e8a39a;
+
+  --font-display: 'Instrument Serif', 'Times New Roman', Georgia, serif;
+  --font-sans: 'Manrope Variable', 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+  /* Fluid type: min at 320px, max at ~1440px */
+  --text-display: clamp(2.75rem, 1.6rem + 5.6vw, 7.5rem);
+  --text-display--line-height: 0.95;
+  --text-headline: clamp(2rem, 1.35rem + 3.1vw, 4.5rem);
+  --text-headline--line-height: 1;
+  --text-title: clamp(1.5rem, 1.2rem + 1.4vw, 2.5rem);
+  --text-title--line-height: 1.1;
+  --text-lead: clamp(1.125rem, 1.05rem + 0.4vw, 1.375rem);
+  --text-lead--line-height: 1.55;
+
+  --ease-cinematic: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* CSS-only entrance animations for above-the-fold content: they start on first paint
+     without waiting for JavaScript. Reduced motion shortens them to nothing (index.css). */
+  --animate-rise: rise 1s var(--ease-cinematic) both;
+  --animate-settle: settle 2.6s var(--ease-cinematic) both;
+  --animate-scrollcue: scrollcue 1.8s var(--ease-cinematic) infinite;
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(1.75rem);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* A short line travelling down a track: the walkthrough's 'scroll to explore' cue */
+  @keyframes scrollcue {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(260%);
+    }
+  }
+
+  @keyframes settle {
+    from {
+      transform: scale(1.07);
+    }
+    to {
+      transform: none;
+    }
+  }
+
+  --breakpoint-xs: 26rem;
+}

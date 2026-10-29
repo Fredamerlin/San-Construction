@@ -1,0 +1,20 @@
+CLIP c02: Through the front door into the living room
+Purpose: The first move from outside to inside; it must feel like walking in through the door.
+Camera: Push-in up the steps and through the doorway (the door opens as the camera approaches)
+Duration: 8 s    Aspect: 16:9 (widescreen)    Quality: 1080p (the highest available)
+
+UPLOAD AS START FRAME:  start.png   <- last frame of c01.mp4
+UPLOAD AS END FRAME:    end.png     <- storyboard keyframe 03 (original/panel-03.png, not upscaled yet)
+
+--- PROMPT (paste into the prompt box) ---
+The camera moves slowly forward up the dark granite steps with their small step lights, under the brass hanging lantern, toward the carved teak front door. The door swings open inward and the camera glides through the doorway into a warm, spacious living room: cream sofas with cushions, a low wooden coffee table on a soft rug, a dark-wood ceiling fan, a teak-panelled TV wall with a low console, cove lighting in a stepped ceiling and tall windows with sheer curtains.
+
+Photorealistic architectural visualization film of a luxury modern Kerala-style Indian home, like a premium real-estate launch film. Real-world materials and scale, natural light, physically accurate shadows and reflections, crisp detail, cinematic colour grade, soft evening haze. One continuous, slow, perfectly smooth stabilized camera move (gimbal or drone). No cuts.
+
+The interior (the same home as the start image): cream lime-plaster walls, dark grey polished stone floors, teak and cane furniture, wooden lattice jali screens, brass dome pendant lamps, terracotta and copper pots on open wooden shelves, jute rugs, potted plants, white-framed windows with soft natural daylight and lush greenery outside.
+
+--- NEGATIVE PROMPT (paste into the negative prompt box) ---
+cartoon, CGI game graphics, low-poly, 3D toy model, clay render, illustration, painting, anime, oversaturated, plastic-looking materials, warped or bending walls, morphing architecture, melting objects, flickering lights, house design changing, people, animals, moving cars, text, captions, logos, watermark, fisheye distortion, shaky handheld camera, fast motion, cuts, scene change
+
+Save the best take as:  cinematic/clips/c02.mp4
+Then run:               node scripts/cinematic/last-frame.mjs c02

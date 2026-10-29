@@ -1,0 +1,20 @@
+CLIP c11: Closing: night pull-back
+Purpose: Final calm shot; the website fades in the SAN Construction card over it.
+Camera: Very slow, steady pull-back (dolly out)
+Duration: 5 s    Aspect: 16:9 (widescreen)    Quality: 1080p (the highest available)
+
+UPLOAD AS START FRAME:  start.png   <- storyboard keyframe 11 (original/panel-11.png, not upscaled yet)
+END FRAME:              none (leave the end frame empty)
+
+--- PROMPT (paste into the prompt box) ---
+Very slow, steady pull-back from the front of the house at night. The house glows warmly from within, the gate lanterns and uplights are lit, and the palm leaves move slightly in the breeze. Calm and still, no new elements.
+
+Photorealistic architectural visualization film of a luxury modern Kerala-style Indian home, like a premium real-estate launch film. Real-world materials and scale, natural light, physically accurate shadows and reflections, crisp detail, cinematic colour grade, soft evening haze. One continuous, slow, perfectly smooth stabilized camera move (gimbal or drone). No cuts.
+
+The house (identical in every shot, as in clip c01): a two-storey Kerala-style villa with warm cream plaster walls, terracotta clay-tile gable roofs, stone-clad piers and wall panels, a first-floor balcony with a black metal railing and vertical timber louvres, teak-framed windows glowing warmly, a deep entrance porch with white columns on dark granite bases, a coffered teak ceiling with downlights and a brass hanging lantern, a carved teak front door between slatted timber side panels, dark granite steps with small step lights, a cream compound wall with stone-clad gate pillars and a sliding wooden-slat gate, coconut palms and lush tropical planting.
+
+--- NEGATIVE PROMPT (paste into the negative prompt box) ---
+cartoon, CGI game graphics, low-poly, 3D toy model, clay render, illustration, painting, anime, oversaturated, plastic-looking materials, warped or bending walls, morphing architecture, melting objects, flickering lights, house design changing, people, animals, moving cars, text, captions, logos, watermark, fisheye distortion, shaky handheld camera, fast motion, cuts, scene change
+
+Save the best take as:  cinematic/clips/c11.mp4
+Then tell Claude all 11 clips are ready.

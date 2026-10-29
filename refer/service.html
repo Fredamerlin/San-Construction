@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | SAN Construction - Turnkey Architectural & Civil Engineering</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#121212',
+                            card: '#1A1A1E',
+                            concrete: '#2A2A2E',
+                            border: '#38383E',
+                            lightBg: '#F9F8F3',
+                            ivory: '#F0EDE6',
+                            gold: '#C5A059',
+                            goldHover: '#D4AF37',
+                            goldLight: 'rgba(197, 160, 89, 0.12)',
+                            textMuted: '#A0A0A8'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #121212;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #38383E;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C5A059;
+        }
+        
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF0D0 0%, #C5A059 50%, #E2C481 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .blueprint-grid {
+            background-size: 30px 30px;
+            background-image: 
+                linear-gradient(to right, rgba(197, 160, 89, 0.08) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(197, 160, 89, 0.08) 1px, transparent 1px);
+        }
+
+        .glass-panel {
+            background: rgba(26, 26, 30, 0.80);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .gold-glow-hover:hover {
+            border-color: #C5A059;
+            box-shadow: 0 0 25px rgba(197, 160, 89, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-gray-200 font-sans antialiased selection:bg-brand-gold selection:text-black">
+
+    <!-- Scroll Progress Bar -->
+    <div id="scrollProgress" class="fixed top-0 left-0 h-1 bg-brand-gold z-50 transition-all duration-150 w-0"></div>
+
+    <!-- Header / Navbar -->
+    <header id="mainHeader" class="fixed top-0 left-0 w-full z-40 transition-all duration-300 py-5 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto glass-panel rounded-2xl px-6 py-3 flex items-center justify-between transition-all duration-300">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-lg bg-brand-gold/10 border border-brand-gold/40 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-black transition-all duration-300">
+                    <span class="font-serif text-2xl font-bold">S</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-xl tracking-wider font-bold text-white group-hover:text-brand-gold transition-colors">SAN</span>
+                    <span class="text-[9px] tracking-[0.25em] text-brand-gold uppercase -mt-1 font-semibold">CONSTRUCTION</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="index.html" class="hover:text-brand-gold transition-colors">Home</a>
+                <a href="about.html" class="hover:text-brand-gold transition-colors">About Us</a>
+                <a href="#expertise" class="text-brand-gold font-semibold">Services</a>
+                <a href="#residential" class="hover:text-brand-gold transition-colors">Residential</a>
+                <a href="#commercial" class="hover:text-brand-gold transition-colors">Commercial</a>
+                <a href="#process" class="hover:text-brand-gold transition-colors">Design & Build</a>
+                <a href="#estimator" class="hover:text-brand-gold transition-colors">Estimator</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="tel:+919876543210" class="text-xs font-semibold tracking-wider uppercase text-gray-400 hover:text-white flex items-center gap-2">
+                    <i data-lucide="phone" class="w-3.5 h-3.5 text-brand-gold"></i>
+                    <span>+91 98765 43210</span>
+                </a>
+                <button onclick="openEnquireModal('General Inquiry')" class="relative group overflow-hidden rounded-xl px-5 py-2.5 bg-brand-gold text-black font-semibold text-xs tracking-wider uppercase transition-all duration-300 hover:shadow-[0_0_20px_rgba(197,160,89,0.4)]">
+                    <span class="relative z-10 flex items-center gap-2">
+                        <span>Get a Quote</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </span>
+                    <div class="absolute inset-0 bg-white/30 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobileMenuBtn" class="lg:hidden text-white p-2 focus:outline-none" aria-label="Toggle Navigation">
+                <i data-lucide="menu" id="menuIcon" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileDrawer" class="fixed inset-0 bg-brand-dark/95 backdrop-blur-xl z-30 transform translate-x-full transition-transform duration-500 lg:hidden flex flex-col justify-between p-8 pt-28">
+        <div class="flex flex-col gap-6 text-xl font-serif">
+            <a href="index.html" class="mobile-nav-link text-gray-300 hover:text-brand-gold border-b border-white/5 pb-3">Home</a>
+            <a href="about.html" class="mobile-nav-link text-gray-300 hover:text-brand-gold border-b border-white/5 pb-3">About Us</a>
+            <a href="#expertise" class="mobile-nav-link text-brand-gold border-b border-white/5 pb-3">All Services</a>
+            <a href="#residential" class="mobile-nav-link text-gray-300 hover:text-brand-gold border-b border-white/5 pb-3">Residential Solutions</a>
+            <a href="#commercial" class="mobile-nav-link text-gray-300 hover:text-brand-gold border-b border-white/5 pb-3">Commercial Buildings</a>
+            <a href="#process" class="mobile-nav-link text-gray-300 hover:text-brand-gold border-b border-white/5 pb-3">Design & Build Studio</a>
+            <a href="#estimator" class="mobile-nav-link text-gray-300 hover:text-brand-gold border-b border-white/5 pb-3">Scope Estimator</a>
+        </div>
+        <div class="flex flex-col gap-4">
+            <button onclick="openEnquireModal('Mobile General')" class="w-full py-4 rounded-xl bg-brand-gold text-black font-semibold text-center uppercase tracking-wider text-xs">
+                Request Service Enquiry
+            </button>
+        </div>
+    </div>
+
+    <!-- SECTION 0: PAGE HERO -->
+    <section class="relative min-h-[85vh] flex items-center justify-center pt-28 pb-16 px-4 md:px-8 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000&auto=format&fit=crop" 
+                 alt="Modern South Indian Villa Construction at Golden Hour" 
+                 class="w-full h-full object-cover object-center scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/75 to-brand-dark/45"></div>
+            <div class="blueprint-grid absolute inset-0 opacity-20"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto w-full pt-12">
+            <!-- Breadcrumbs -->
+            <nav class="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">
+                <a href="index.html" class="hover:text-brand-gold transition-colors">Home</a>
+                <span>/</span>
+                <span class="text-brand-gold">Services</span>
+            </nav>
+
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-gold/15 border border-brand-gold/30 text-brand-gold text-xs font-semibold tracking-wider uppercase mb-6 backdrop-blur-md">
+                    <span class="w-2 h-2 rounded-full bg-brand-gold"></span>
+                    OUR SERVICES
+                </div>
+
+                <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl font-semibold text-white leading-[1.1] mb-6">
+                    Construction Solutions <br>
+                    <span class="gold-gradient-text italic font-normal">Built Around Your Vision</span>
+                </h1>
+
+                <p class="text-base md:text-xl text-gray-300 font-light leading-relaxed mb-10 max-w-2xl">
+                    From residential homes to commercial spaces, explore construction and design solutions tailored to your project requirements.
+                </p>
+
+                <!-- Quick Navigation Jump Tags -->
+                <div class="flex flex-wrap items-center gap-3">
+                    <a href="#residential" class="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-brand-gold hover:text-black border border-white/20 text-xs font-semibold tracking-wider uppercase transition-all backdrop-blur-md flex items-center gap-2">
+                        <i data-lucide="home" class="w-3.5 h-3.5"></i>
+                        <span>Residential</span>
+                    </a>
+                    <a href="#commercial" class="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-brand-gold hover:text-black border border-white/20 text-xs font-semibold tracking-wider uppercase transition-all backdrop-blur-md flex items-center gap-2">
+                        <i data-lucide="building-2" class="w-3.5 h-3.5"></i>
+                        <span>Commercial</span>
+                    </a>
+                    <a href="#process" class="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-brand-gold hover:text-black border border-white/20 text-xs font-semibold tracking-wider uppercase transition-all backdrop-blur-md flex items-center gap-2">
+                        <i data-lucide="pen-tool" class="w-3.5 h-3.5"></i>
+                        <span>Design & Build</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: OUR EXPERTISE (INTERACTIVE SELECTOR) -->
+    <section id="expertise" class="py-24 px-4 md:px-8 bg-brand-dark relative border-t border-brand-border">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-brand-border">
+                <div>
+                    <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase mb-2 block">Pillars of Execution</span>
+                    <h2 class="font-serif text-3xl md:text-5xl text-white font-semibold">Primary Service Spectrum</h2>
+                </div>
+                <p class="text-gray-400 text-sm max-w-md mt-4 md:mt-0 font-light">
+                    End-to-end execution combining local municipal regulatory expertise with advanced BIM structural coordination.
+                </p>
+            </div>
+
+            <!-- Asymmetric Grid Matrix -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                
+                <!-- Service 1: Residential Construction -->
+                <div class="lg:col-span-5 group relative bg-brand-card rounded-3xl overflow-hidden border border-brand-border hover:border-brand-gold transition-all duration-500 p-8 flex flex-col justify-between h-[480px]">
+                    <div class="absolute inset-0 z-0">
+                        <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=1000&auto=format&fit=crop" 
+                             alt="Residential Villa Construction" 
+                             class="w-full h-full object-cover opacity-25 group-hover:scale-105 group-hover:opacity-35 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-brand-card/85 to-transparent"></div>
+                    </div>
+
+                    <div class="relative z-10 flex justify-between items-start">
+                        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold">
+                            <i data-lucide="home" class="w-6 h-6"></i>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-brand-gold/15 text-brand-gold text-[10px] font-mono tracking-wider uppercase font-semibold">CAPABILITY 01</span>
+                    </div>
+
+                    <div class="relative z-10 mt-auto">
+                        <h3 class="font-serif text-3xl text-white font-semibold mb-3 group-hover:text-brand-gold transition-colors">Residential Construction</h3>
+                        <p class="text-gray-300 text-xs md:text-sm leading-relaxed mb-6 font-light">
+                            Custom modern Indian villas, multi-storey family homes, compound walls, gated security entrances, and Vaastu-aligned spatial design.
+                        </p>
+                        
+                        <div class="flex items-center justify-between border-t border-white/10 pt-4">
+                            <a href="#residential" class="text-xs font-semibold uppercase tracking-wider text-brand-gold flex items-center gap-2">
+                                <span>View Capabilities</span>
+                                <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
+                            </a>
+                            <button onclick="openEnquireModal('Residential Construction')" class="p-2.5 rounded-xl bg-brand-gold text-black hover:bg-brand-goldHover transition-colors">
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2: Commercial Construction -->
+                <div class="lg:col-span-7 group relative bg-brand-card rounded-3xl overflow-hidden border border-brand-border hover:border-brand-gold transition-all duration-500 p-8 flex flex-col justify-between h-[480px]">
+                    <div class="absolute inset-0 z-0">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop" 
+                             alt="Commercial Headquarters Architecture" 
+                             class="w-full h-full object-cover opacity-25 group-hover:scale-105 group-hover:opacity-35 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-brand-card/85 to-transparent"></div>
+                    </div>
+
+                    <div class="relative z-10 flex justify-between items-start">
+                        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold">
+                            <i data-lucide="building-2" class="w-6 h-6"></i>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-brand-gold/15 text-brand-gold text-[10px] font-mono tracking-wider uppercase font-semibold">CAPABILITY 02</span>
+                    </div>
+
+                    <div class="relative z-10 mt-auto">
+                        <span class="text-xs font-mono text-brand-gold uppercase tracking-wider mb-1 block">LEED Compliant Engineering</span>
+                        <h3 class="font-serif text-3xl text-white font-semibold mb-3 group-hover:text-brand-gold transition-colors">Commercial & Corporate Landmarks</h3>
+                        <p class="text-gray-300 text-xs md:text-sm leading-relaxed mb-6 font-light max-w-xl">
+                            High-rise IT park wings, retail plazas, boutique office complexes, and structural steel retrofitting across South India's major business corridors.
+                        </p>
+
+                        <div class="flex items-center justify-between border-t border-white/10 pt-4">
+                            <a href="#commercial" class="text-xs font-semibold uppercase tracking-wider text-brand-gold flex items-center gap-2">
+                                <span>Explore Commercial Spec</span>
+                                <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
+                            </a>
+                            <button onclick="openEnquireModal('Commercial Construction')" class="p-2.5 rounded-xl bg-brand-gold text-black hover:bg-brand-goldHover transition-colors">
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3: Design & Build Solutions (Full Width Bottom Banner) -->
+                <div class="lg:col-span-12 group relative bg-brand-concrete/40 rounded-3xl overflow-hidden border border-brand-border hover:border-brand-gold transition-all duration-500 p-8 md:p-10">
+                    <div class="blueprint-grid absolute inset-0 opacity-30"></div>
+
+                    <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+                        <div class="max-w-2xl">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold">
+                                    <i data-lucide="pen-tool" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-xs font-mono text-brand-gold uppercase tracking-wider">CAPABILITY 03 • SINGLE-SOURCE TURNKEY</span>
+                            </div>
+                            <h3 class="font-serif text-3xl md:text-4xl text-white font-semibold mb-3">Design & Build Studio Integration</h3>
+                            <p class="text-gray-300 text-xs md:text-sm leading-relaxed font-light">
+                                Consolidate architectural design, structural engineering, municipal sanctioning, and civil execution under one unified contract with fixed milestones and zero budget leakage.
+                            </p>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row items-center gap-4">
+                            <a href="#process" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-brand-dark border border-brand-border text-white text-xs font-semibold uppercase tracking-wider hover:border-brand-gold transition-colors text-center">
+                                View 4-Stage Process
+                            </a>
+                            <button onclick="openEnquireModal('Design and Build')" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-brand-gold text-black text-xs font-semibold uppercase tracking-wider hover:bg-brand-goldHover transition-colors flex items-center justify-center gap-2">
+                                <span>Consult Studio</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: RESIDENTIAL CONSTRUCTION (EDITORIAL SPLIT & MATERIAL TABS) -->
+    <section id="residential" class="py-24 px-4 md:px-8 bg-brand-card relative border-t border-brand-border">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left: Photorealistic Imagery with Compound Wall & Gate Details -->
+                <div class="lg:col-span-6 relative">
+                    <div class="relative rounded-3xl overflow-hidden border border-white/10 group shadow-2xl">
+                        <img id="resHeroImg" 
+                             src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop" 
+                             alt="Luxury South Indian Modern Villa" 
+                             class="w-full h-[480px] md:h-[580px] object-cover transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+
+                        <!-- Floating Feature Spec Badge -->
+                        <div class="absolute top-6 left-6 glass-panel px-4 py-2.5 rounded-xl text-xs text-white flex items-center gap-3 border border-brand-gold/30">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-brand-gold"></i>
+                            <div>
+                                <span class="font-semibold block text-white">South Indian Villa Standards</span>
+                                <span class="text-[10px] text-gray-400">Teak Entrance Gate • Kota Plinth • Balcony Overhangs</span>
+                            </div>
+                        </div>
+
+                        <!-- Thumbnails for Architectural Views -->
+                        <div class="absolute bottom-6 left-6 right-6 flex items-center gap-3 glass-panel p-3 rounded-2xl">
+                            <button onclick="swapResView('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop', this)" 
+                                    class="res-v-thumb border-2 border-brand-gold rounded-lg overflow-hidden w-16 h-12 flex-shrink-0">
+                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover">
+                            </button>
+                            <button onclick="swapResView('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop', this)" 
+                                    class="res-v-thumb border border-white/20 rounded-lg overflow-hidden w-16 h-12 flex-shrink-0 opacity-70 hover:opacity-100">
+                                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover">
+                            </button>
+                            <button onclick="swapResView('https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?q=80&w=1200&auto=format&fit=crop', this)" 
+                                    class="res-v-thumb border border-white/20 rounded-lg overflow-hidden w-16 h-12 flex-shrink-0 opacity-70 hover:opacity-100">
+                                <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Capabilities & Material Highlights -->
+                <div class="lg:col-span-6 flex flex-col justify-center">
+                    <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase mb-2 block">Residential Expertise</span>
+                    <h2 class="font-serif text-3xl md:text-5xl text-white font-semibold mb-6">
+                        Homes Designed for the Way You Live
+                    </h2>
+                    <p class="text-gray-300 text-sm leading-relaxed font-light mb-8">
+                        We build luxury independent homes, dual-occupancy family villas, and gated compound residences engineered for tropical weather durability, privacy, and scientific Vaastu balance.
+                    </p>
+
+                    <!-- Residential Capabilities Checklist -->
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-dark/60 border border-white/5">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-brand-gold mt-0.5 flex-shrink-0"></i>
+                            <div>
+                                <h4 class="text-xs font-semibold text-white uppercase">New Custom Home Construction</h4>
+                                <p class="text-[11px] text-gray-400">Complete civil execution from excavation and raft foundations to roof slab casting.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-dark/60 border border-white/5">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-brand-gold mt-0.5 flex-shrink-0"></i>
+                            <div>
+                                <h4 class="text-xs font-semibold text-white uppercase">Compound Walls & Landscape Entrances</h4>
+                                <p class="text-[11px] text-gray-400">Automated gate integration, natural stone cladding, security lighting, and courtyard gardens.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3 p-3 rounded-xl bg-brand-dark/60 border border-white/5">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-brand-gold mt-0.5 flex-shrink-0"></i>
+                            <div>
+                                <h4 class="text-xs font-semibold text-white uppercase">Elevation Masonry & Balcony Details</h4>
+                                <p class="text-[11px] text-gray-400">Exposed concrete overhangs, teakwood louvers, double-glazed glass railings & weather-coat finishes.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Material Highlights Switcher Tab -->
+                    <div class="p-4 rounded-2xl bg-brand-dark border border-brand-border mb-8">
+                        <div class="flex items-center justify-between mb-3 border-b border-white/10 pb-2">
+                            <span class="text-[11px] uppercase tracking-wider text-brand-gold font-semibold">Architectural Material Spec</span>
+                            <span id="resTabLabel" class="text-[10px] text-gray-400 font-mono">Porotherm Masonry</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-2">
+                            <button onclick="setResMatTab('poro', 'Porotherm Clay Brickwork', 'High thermal insulation reducing indoor room temperatures by 3-5°C.', this)" 
+                                    class="res-mat-tab px-3 py-2 rounded-lg bg-brand-gold text-black text-xs font-semibold">
+                                Bricks
+                            </button>
+                            <button onclick="setResMatTab('teak', 'Seasoned Teak Entrances', 'Termite-treated Burma teak doors and motorized privacy louvers.', this)" 
+                                    class="res-mat-tab px-3 py-2 rounded-lg bg-brand-card text-gray-300 text-xs font-semibold hover:border hover:border-brand-gold">
+                                Teak
+                            </button>
+                            <button onclick="setResMatTab('stone', 'Honed Kota Flooring', 'Cool non-slip natural stone flooring for living areas and courtyards.', this)" 
+                                    class="res-mat-tab px-3 py-2 rounded-lg bg-brand-card text-gray-300 text-xs font-semibold hover:border hover:border-brand-gold">
+                                Stone
+                            </button>
+                        </div>
+                        <p id="resTabDesc" class="text-xs text-gray-300 mt-3 font-light">High thermal insulation reducing indoor room temperatures by 3-5°C.</p>
+                    </div>
+
+                    <button onclick="openEnquireModal('Residential Construction')" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-gold text-black font-semibold text-xs tracking-widest uppercase hover:bg-brand-goldHover transition-all flex items-center justify-center gap-3">
+                        <span>Enquire About Residential Construction</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: COMMERCIAL CONSTRUCTION (WIDE ASYMMETRIC GRID) -->
+    <section id="commercial" class="py-24 px-4 md:px-8 bg-brand-dark relative border-t border-brand-border">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                <div>
+                    <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase mb-2 block">Institutional & Commercial</span>
+                    <h2 class="font-serif text-3xl md:text-5xl text-white font-semibold">Spaces That Move Business Forward</h2>
+                </div>
+                <p class="text-gray-400 text-sm max-w-md mt-4 md:mt-0 font-light">
+                    Built to international specifications across South India's major commercial tech hubs.
+                </p>
+            </div>
+
+            <!-- Wide Commercial Showcase Banner -->
+            <div class="relative rounded-3xl overflow-hidden border border-brand-border mb-12 h-[420px] group">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop" 
+                     alt="Commercial Headquarters IT Park" 
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/80 to-transparent"></div>
+                <div class="blueprint-grid absolute inset-0 opacity-20"></div>
+
+                <div class="absolute inset-0 p-8 md:p-12 flex flex-col justify-between max-w-2xl">
+                    <span class="px-3.5 py-1.5 rounded-full bg-brand-gold/20 text-brand-gold text-[10px] font-mono tracking-wider uppercase font-semibold border border-brand-gold/30 w-max">
+                        ISO 9001 Structural Standard
+                    </span>
+
+                    <div>
+                        <h3 class="font-serif text-3xl md:text-4xl text-white font-semibold mb-3">High-Performance Office Complexes</h3>
+                        <p class="text-gray-300 text-xs md:text-sm leading-relaxed font-light mb-6">
+                            Featuring post-tensioned slab engineering, double-skin glass curtain walls, centralized HVAC ducting, and basement multi-tier parking.
+                        </p>
+                        <button onclick="openEnquireModal('Commercial Construction')" class="px-6 py-3 rounded-xl bg-brand-gold text-black font-semibold text-xs tracking-wider uppercase hover:bg-brand-goldHover transition-colors inline-flex items-center gap-2">
+                            <span>Enquire Commercial Project</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Commercial Specs Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="p-6 rounded-2xl bg-brand-card border border-brand-border">
+                    <i data-lucide="layers" class="w-6 h-6 text-brand-gold mb-3"></i>
+                    <h4 class="text-sm font-semibold text-white mb-1">Post-Tensioned Slabs</h4>
+                    <p class="text-xs text-gray-400">Maximizes column-free interior floorplate space for corporate office layouts.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-brand-card border border-brand-border">
+                    <i data-lucide="activity" class="w-6 h-6 text-brand-gold mb-3"></i>
+                    <h4 class="text-sm font-semibold text-white mb-1">Seismic Zone V Compliance</h4>
+                    <p class="text-xs text-gray-400">High-grade structural steel framing resisting seismic & monsoon thermal loads.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-brand-card border border-brand-border">
+                    <i data-lucide="wind" class="w-6 h-6 text-brand-gold mb-3"></i>
+                    <h4 class="text-sm font-semibold text-white mb-1">HVAC & MEP Integration</h4>
+                    <p class="text-xs text-gray-400">Seamless coordination of mechanical, electrical & plumbing shafts in 3D BIM.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-brand-card border border-brand-border">
+                    <i data-lucide="sun" class="w-6 h-6 text-brand-gold mb-3"></i>
+                    <h4 class="text-sm font-semibold text-white mb-1">LEED Gold Readiness</h4>
+                    <p class="text-xs text-gray-400">Low-E glass curtain walls reducing HVAC electricity consumption by up to 30%.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 4: DESIGN & BUILD STUDIO (4-STAGE PROCESS & ESTIMATOR) -->
+    <section id="process" class="py-24 px-4 md:px-8 bg-brand-concrete/30 relative border-t border-brand-border">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase mb-2 block">Turnkey Workflow</span>
+                <h2 class="font-serif text-3xl md:text-5xl text-white font-semibold mb-4">From First Sketch to Final Structure</h2>
+                <p class="text-gray-400 text-sm font-light">
+                    Our single-source methodology eliminates friction between architects and civil contractors.
+                </p>
+            </div>
+
+            <!-- 4-Stage Process Horizontal Row (Mobile Stacked) -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-20 relative">
+                
+                <!-- Stage 1 -->
+                <div class="bg-brand-card p-6 rounded-2xl border border-brand-border hover:border-brand-gold transition-all relative group">
+                    <div class="w-10 h-10 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold font-mono font-bold mb-4">
+                        01
+                    </div>
+                    <h4 class="font-serif text-xl text-white font-semibold mb-2">Discover & Audit</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Site soil testing, topographical survey, municipal zoning review & client lifestyle brief mapping.
+                    </p>
+                </div>
+
+                <!-- Stage 2 -->
+                <div class="bg-brand-card p-6 rounded-2xl border border-brand-border hover:border-brand-gold transition-all relative group">
+                    <div class="w-10 h-10 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold font-mono font-bold mb-4">
+                        02
+                    </div>
+                    <h4 class="font-serif text-xl text-white font-semibold mb-2">Design & BIM 3D</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Vaastu-aligned floorplan blueprints, material selection boards & 3D virtual walkthroughs.
+                    </p>
+                </div>
+
+                <!-- Stage 3 -->
+                <div class="bg-brand-card p-6 rounded-2xl border border-brand-border hover:border-brand-gold transition-all relative group">
+                    <div class="w-10 h-10 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold font-mono font-bold mb-4">
+                        03
+                    </div>
+                    <h4 class="font-serif text-xl text-white font-semibold mb-2">Plan & Sanction</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Municipal corporation plan approvals, fixed BOQ quotation locking & structural engineering calculation.
+                    </p>
+                </div>
+
+                <!-- Stage 4 -->
+                <div class="bg-brand-card p-6 rounded-2xl border border-brand-border hover:border-brand-gold transition-all relative group">
+                    <div class="w-10 h-10 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold font-mono font-bold mb-4">
+                        04
+                    </div>
+                    <h4 class="font-serif text-xl text-white font-semibold mb-2">Build & Handover</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Civil masonry execution, live site CCTV updates, quality testing & final key handover.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- INTERACTIVE SCOPE & COST ESTIMATOR -->
+            <div id="estimator" class="glass-panel p-8 md:p-12 rounded-3xl border border-brand-gold/30 relative overflow-hidden">
+                <div class="blueprint-grid absolute inset-0 opacity-20"></div>
+
+                <div class="relative z-10 text-center max-w-2xl mx-auto mb-10">
+                    <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase mb-2 block">Instant Scope Planner</span>
+                    <h3 class="font-serif text-3xl text-white font-semibold mb-2">Service Budget Estimator</h3>
+                    <p class="text-gray-400 text-xs md:text-sm">Estimate turn-key architectural design & civil construction costs for your project.</p>
+                </div>
+
+                <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="flex flex-col gap-2">
+                        <label class="text-xs font-semibold uppercase text-gray-300">Service Category</label>
+                        <select id="svcType" onchange="recalculateSvcCost()" class="bg-brand-card text-white border border-brand-border rounded-xl px-4 py-3 text-sm focus:border-brand-gold focus:outline-none">
+                            <option value="villa">Luxury Villa Construction</option>
+                            <option value="commercial">Commercial Office Space</option>
+                            <option value="designbuild">Complete Design & Build Package</option>
+                        </select>
+                    </div>
+
+                    <div class="flex flex-col gap-2">
+                        <div class="flex justify-between items-center">
+                            <label class="text-xs font-semibold uppercase text-gray-300">Plot / Built-Up Area</label>
+                            <span id="svcAreaVal" class="text-xs font-mono text-brand-gold font-bold">4,000 Sq. Ft</span>
+                        </div>
+                        <input type="range" id="svcArea" min="1000" max="20000" step="250" value="4000" oninput="recalculateSvcCost()" 
+                               class="w-full accent-brand-gold bg-brand-concrete rounded-lg h-2 cursor-pointer mt-3">
+                    </div>
+
+                    <div class="flex flex-col gap-2">
+                        <label class="text-xs font-semibold uppercase text-gray-300">Finish Specification</label>
+                        <select id="svcTier" onchange="recalculateSvcCost()" class="bg-brand-card text-white border border-brand-border rounded-xl px-4 py-3 text-sm focus:border-brand-gold focus:outline-none">
+                            <option value="standard">Standard Tier (₹2,800/sq.ft)</option>
+                            <option value="luxury" selected>Luxury Tier (₹3,600/sq.ft)</option>
+                            <option value="signature">Signature Heritage Tier (₹4,800/sq.ft)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="relative z-10 bg-brand-card p-6 rounded-2xl border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div>
+                        <span class="text-xs text-gray-400 uppercase tracking-wider block mb-1">Estimated Turnkey Budget Range</span>
+                        <span id="svcCostDisplay" class="font-serif text-3xl md:text-5xl font-bold gold-gradient-text">₹ 1.44 Crore</span>
+                    </div>
+
+                    <button onclick="openEnquireModal('Calculator Lead')" class="w-full md:w-auto px-8 py-4 rounded-xl bg-brand-gold text-black font-semibold text-xs tracking-widest uppercase hover:bg-brand-goldHover transition-all flex items-center justify-center gap-2">
+                        <span>Get Itemized BOQ Breakdown</span>
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 5: LET'S BUILD SOMETHING EXCEPTIONAL (CLOSING CTA) -->
+    <section class="py-24 px-4 md:px-8 bg-gradient-to-b from-brand-dark via-brand-card to-black relative overflow-hidden border-t border-brand-border">
+        <div class="blueprint-grid absolute inset-0 opacity-20"></div>
+
+        <div class="max-w-4xl mx-auto relative z-10 text-center">
+            <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase mb-3 block">START YOUR PROJECT</span>
+            <h2 class="font-serif text-4xl md:text-6xl text-white font-semibold mb-6">
+                Let's Build Something <span class="gold-gradient-text italic font-normal">Exceptional</span>
+            </h2>
+            <p class="text-gray-300 text-sm md:text-base max-w-2xl mx-auto font-light mb-10">
+                Have a residential home or commercial project in mind? Let's discuss your requirements and explore the right construction solution.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-16">
+                <button onclick="openEnquireModal('Closing CTA Quote')" class="px-8 py-4 rounded-xl bg-brand-gold text-black font-semibold text-xs tracking-widest uppercase hover:bg-brand-goldHover transition-all flex items-center gap-3 shadow-[0_10px_30px_rgba(197,160,89,0.3)]">
+                    <span>Get a Quote</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+                <a href="tel:+919876543210" class="px-8 py-4 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-xs tracking-widest uppercase border border-white/20 backdrop-blur-md transition-all flex items-center gap-3">
+                    <i data-lucide="phone" class="w-4 h-4 text-brand-gold"></i>
+                    <span>Contact Studio</span>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left border-t border-white/10 pt-12">
+                <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                    <h4 class="text-xs font-semibold text-brand-gold uppercase tracking-wider mb-2">Bengaluru HQ</h4>
+                    <p class="text-xs text-gray-300">Indiranagar 100ft Road, Bengaluru, Karnataka 560038</p>
+                    <p class="text-[11px] text-gray-500 mt-2">+91 80 4567 8900</p>
+                </div>
+                <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                    <h4 class="text-xs font-semibold text-brand-gold uppercase tracking-wider mb-2">Chennai Studio</h4>
+                    <p class="text-xs text-gray-300">Nungambakkam High Road, Chennai, Tamil Nadu 600034</p>
+                    <p class="text-[11px] text-gray-500 mt-2">+91 44 2827 1100</p>
+                </div>
+                <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                    <h4 class="text-xs font-semibold text-brand-gold uppercase tracking-wider mb-2">Hyderabad Desk</h4>
+                    <p class="text-xs text-gray-300">Road No. 36, Jubilee Hills, Hyderabad, Telangana 500033</p>
+                    <p class="text-[11px] text-gray-500 mt-2">+91 40 6789 2200</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-12 px-4 md:px-8 text-gray-500 text-xs border-t border-brand-border">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-brand-gold/10 border border-brand-gold/40 flex items-center justify-center text-brand-gold font-serif font-bold">
+                    S
+                </div>
+                <span class="text-gray-300 font-serif tracking-wider">SAN CONSTRUCTION PVT. LTD.</span>
+            </div>
+
+            <div class="flex gap-6">
+                <a href="index.html" class="hover:text-brand-gold transition-colors">Home Page</a>
+                <a href="about.html" class="hover:text-brand-gold transition-colors">About Us</a>
+                <a href="#expertise" class="hover:text-brand-gold transition-colors">Services</a>
+                <a href="#" class="hover:text-brand-gold transition-colors">ISO 9001:2015 Certified</a>
+            </div>
+
+            <p>© 2026 SAN Construction. All Rights Reserved. Turnkey Architectural & Civil Engineering.</p>
+        </div>
+    </footer>
+
+    <!-- SERVICE ENQUIRY MODAL -->
+    <div id="enquireModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-brand-card border border-brand-border rounded-3xl p-6 md:p-8 max-w-lg w-full relative">
+            <button onclick="closeModal('enquireModal')" class="absolute top-6 right-6 text-gray-400 hover:text-white">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase mb-1 block">SERVICE INQUIRY</span>
+            <h3 id="modalSvcTitle" class="font-serif text-2xl text-white font-semibold mb-2">Request Service Consultation</h3>
+            <p class="text-xs text-gray-400 mb-6">Submit your plot details for an expert callback from our senior civil engineers.</p>
+
+            <form onsubmit="handleEnquirySubmit(event)" class="flex flex-col gap-4">
+                <div>
+                    <label class="text-[11px] font-semibold text-gray-300 uppercase block mb-1">Full Name</label>
+                    <input type="text" required placeholder="e.g. Vikramaditya Sharma" class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-2.5 text-sm text-white focus:border-brand-gold focus:outline-none">
+                </div>
+                <div>
+                    <label class="text-[11px] font-semibold text-gray-300 uppercase block mb-1">Phone Number</label>
+                    <input type="tel" required placeholder="+91 98765 43210" class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-2.5 text-sm text-white focus:border-brand-gold focus:outline-none">
+                </div>
+                <div>
+                    <label class="text-[11px] font-semibold text-gray-300 uppercase block mb-1">City / Location</label>
+                    <input type="text" required placeholder="e.g. Jubilee Hills, Hyderabad" class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-2.5 text-sm text-white focus:border-brand-gold focus:outline-none">
+                </div>
+                <div>
+                    <label class="text-[11px] font-semibold text-gray-300 uppercase block mb-1">Plot Area (Sq. Ft)</label>
+                    <input type="number" placeholder="e.g. 3500" class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-2.5 text-sm text-white focus:border-brand-gold focus:outline-none">
+                </div>
+
+                <button type="submit" class="w-full py-3.5 rounded-xl bg-brand-gold text-black font-semibold text-xs tracking-widest uppercase hover:bg-brand-goldHover transition-colors mt-2">
+                    Submit Service Enquiry
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT FOR INTERACTION -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('scrollProgress').style.width = scrolled + '%';
+
+            const header = document.getElementById('mainHeader');
+            if (winScroll > 50) {
+                header.classList.add('py-3');
+                header.classList.remove('py-5');
+            } else {
+                header.classList.add('py-5');
+                header.classList.remove('py-3');
+            }
+        });
+
+        // Mobile Menu Drawer Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileDrawer = document.getElementById('mobileDrawer');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileDrawer.classList.toggle('translate-x-full');
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileDrawer.classList.add('translate-x-full');
+            });
+        });
+
+        // Modal Functionality
+        function openEnquireModal(svcName) {
+            document.getElementById('modalSvcTitle').innerText = 'Enquire: ' + svcName;
+            document.getElementById('enquireModal').classList.remove('hidden');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        function handleEnquirySubmit(e) {
+            e.preventDefault();
+            alert('Thank you for your service enquiry. Our civil consultant will contact you within 24 hours.');
+            closeModal('enquireModal');
+        }
+
+        // Residential Image Swap
+        function swapResView(src, btn) {
+            document.getElementById('resHeroImg').src = src;
+            document.querySelectorAll('.res-v-thumb').forEach(t => {
+                t.classList.remove('border-brand-gold');
+                t.classList.add('border-white/20', 'opacity-70');
+            });
+            btn.classList.add('border-brand-gold');
+            btn.classList.remove('border-white/20', 'opacity-70');
+        }
+
+        // Residential Material Tab Switcher
+        function setResMatTab(key, label, desc, btn) {
+            document.getElementById('resTabLabel').innerText = label;
+            document.getElementById('resTabDesc').innerText = desc;
+
+            document.querySelectorAll('.res-mat-tab').forEach(b => {
+                b.classList.remove('bg-brand-gold', 'text-black');
+                b.classList.add('bg-brand-card', 'text-gray-300');
+            });
+            btn.classList.add('bg-brand-gold', 'text-black');
+            btn.classList.remove('bg-brand-card', 'text-gray-300');
+        }
+
+        // Cost Estimator
+        function recalculateSvcCost() {
+            const area = parseInt(document.getElementById('svcArea').value);
+            const type = document.getElementById('svcType').value;
+            const tier = document.getElementById('svcTier').value;
+
+            document.getElementById('svcAreaVal').innerText = area.toLocaleString('en-IN') + ' Sq. Ft';
+
+            let rate = 3600;
+            if (tier === 'standard') rate = 2800;
+            if (tier === 'signature') rate = 4800;
+
+            if (type === 'commercial') rate *= 0.85;
+            if (type === 'designbuild') rate *= 1.1;
+
+            const total = area * rate;
+            let formatted = '';
+
+            if (total >= 10000000) {
+                formatted = '₹ ' + (total / 10000000).toFixed(2) + ' Crore';
+            } else {
+                formatted = '₹ ' + (total / 100000).toFixed(2) + ' Lakh';
+            }
+
+            document.getElementById('svcCostDisplay').innerText = formatted;
+        }
+    </script>
+</body>
+</html>
